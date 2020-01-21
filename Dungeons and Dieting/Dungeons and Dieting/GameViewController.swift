@@ -12,7 +12,36 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var PlayButtom: UIButton
+    var SettingButtom: UIButton
+    var QuitButtom: UIButton
+    
+    
+    init()
+    {
+        PlayButtom = UIButton(frame:CGRect (x:0,y:0,width:100, height:50))
+       SettingButtom = UIButton(frame:CGRect (x:0,y:50,width:100, height:50))
+        QuitButtom = UIButton(frame:CGRect (x:0,y:100,width:100, height:50))
+        super.init(nibName:nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        PlayButtom = UIButton(frame:CGRect (x:0,y:0,width:100, height:50))
+        SettingButtom = UIButton(frame:CGRect (x:0,y:0,width:100, height:50))
+        QuitButtom = UIButton(frame:CGRect (x:0,y:0,width:100, height:50))
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+     view.addSubview(PlayButtom)
+      view.addSubview(  SettingButtom)
+       view.addSubview(   QuitButtom)
+    }
+    
+    @objc func ButtomTapped(){}
+    
+   /* override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
@@ -46,5 +75,5 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
-    }
+    }*/
 }

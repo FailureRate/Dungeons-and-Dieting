@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D519A5F23D79CF200309F51 /* GameViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A5E23D79CF200309F51 /* GameViewController2.swift */; };
+		0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A5E23D79CF200309F51 /* MapViewController.swift */; };
 		0D519A6123D79D0400309F51 /* GameViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6023D79D0400309F51 /* GameViewController3.swift */; };
 		0D519A6323D79D2900309F51 /* GameViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6223D79D2900309F51 /* GameViewController4.swift */; };
 		0D519A6523D79D4800309F51 /* GameViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6423D79D4800309F51 /* GameViewController5.swift */; };
@@ -55,7 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D519A5E23D79CF200309F51 /* GameViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController2.swift; sourceTree = "<group>"; };
+		0D519A5E23D79CF200309F51 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D519A6023D79D0400309F51 /* GameViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController3.swift; sourceTree = "<group>"; };
 		0D519A6223D79D2900309F51 /* GameViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController4.swift; sourceTree = "<group>"; };
 		0D519A6423D79D4800309F51 /* GameViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController5.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				0D9D28C823E8A6AA00110705 /* module.modulemap */,
 				9D26A9E823D7982F00836B7D /* GameScene.swift */,
 				9D26A9EA23D7982F00836B7D /* GameViewController.swift */,
-				0D519A5E23D79CF200309F51 /* GameViewController2.swift */,
+				0D519A5E23D79CF200309F51 /* MapViewController.swift */,
 				0D519A6023D79D0400309F51 /* GameViewController3.swift */,
 				0D519A6223D79D2900309F51 /* GameViewController4.swift */,
 				0D519A6423D79D4800309F51 /* GameViewController5.swift */,
@@ -353,7 +353,7 @@
 				0D519A6323D79D2900309F51 /* GameViewController4.swift in Sources */,
 				0D519A6523D79D4800309F51 /* GameViewController5.swift in Sources */,
 				9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */,
-				0D519A5F23D79CF200309F51 /* GameViewController2.swift in Sources */,
+				0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

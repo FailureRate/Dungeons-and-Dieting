@@ -45,27 +45,27 @@ class MapViewController: UIViewController {
         view.addSubview(progressButton)
         view.addSubview(shopButton)
         
-        friendButton.setImage(UIImage(named: "circle"), for: .normal)
+        friendButton.setImage(UIImage(named: "Button"), for: .normal)
         friendButton.translatesAutoresizingMaskIntoConstraints = false
         friendButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         friendButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        itemButton.setImage(UIImage(named: "circle"), for: .normal)
+        itemButton.setImage(UIImage(named: "Button"), for: .normal)
         itemButton.translatesAutoresizingMaskIntoConstraints = false
         itemButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         itemButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        mapButton.setImage(UIImage(named: "circle"), for: .normal)
+        mapButton.setImage(UIImage(named: "Button"), for: .normal)
         mapButton.translatesAutoresizingMaskIntoConstraints = false
         mapButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         mapButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        progressButton.setImage(UIImage(named: "circle"), for: .normal)
+        progressButton.setImage(UIImage(named: "Button"), for: .normal)
         progressButton.translatesAutoresizingMaskIntoConstraints = false
         progressButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         progressButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        shopButton.setImage(UIImage(named: "circle"), for: .normal)
+        shopButton.setImage(UIImage(named: "Button"), for: .normal)
         shopButton.translatesAutoresizingMaskIntoConstraints = false
         shopButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         shopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

@@ -17,6 +17,8 @@ class DietView:UIViewController{
         calorieTextField1 = UITextField();
         calorieTextField0.text = "Please Input Calories"
         calorieTextField1.text = "Please Input Calories"
+        
+        
         super.init(nibName:nil, bundle: nil)
     }
     

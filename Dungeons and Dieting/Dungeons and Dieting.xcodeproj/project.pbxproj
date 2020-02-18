@@ -25,6 +25,7 @@
 		0D9D28D923E8A9E200110705 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D023E8A9E100110705 /* GoogleDataTransport.framework */; };
 		0D9D28DA23E8A9E200110705 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */; };
 		0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */; };
+		0DFB8D2123FC884A0031FE9E /* Monstercontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB8D2023FC884A0031FE9E /* Monstercontrol.swift */; };
 		52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26A9E223D7982F00836B7D /* AppDelegate.swift */; };
 		9D26A9E523D7982F00836B7D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D26A9E423D7982F00836B7D /* GameScene.sks */; };
@@ -76,6 +77,7 @@
 		0D9D28D023E8A9E100110705 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
 		0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0DFB8D2023FC884A0031FE9E /* Monstercontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monstercontrol.swift; sourceTree = "<group>"; };
 		52ECEEA523F5129F009553C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9D26A9DF23D7982F00836B7D /* Dungeons-and-Dieting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dungeons-and-Dieting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D26A9E223D7982F00836B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				9D26A9EF23D7983000836B7D /* Assets.xcassets */,
 				9D26A9F123D7983000836B7D /* LaunchScreen.storyboard */,
 				9D26A9F423D7983000836B7D /* Info.plist */,
+				0DFB8D2023FC884A0031FE9E /* Monstercontrol.swift */,
 			);
 			path = "Dungeons and Dieting";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				9D26A9EB23D7982F00836B7D /* GameViewController.swift in Sources */,
 				0D519A6723D79D6200309F51 /* GameViewController6.swift in Sources */,
 				0D519A6323D79D2900309F51 /* GameViewController4.swift in Sources */,
+				0DFB8D2123FC884A0031FE9E /* Monstercontrol.swift in Sources */,
 				0D519A6523D79D4800309F51 /* GameViewController5.swift in Sources */,
 				9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */,
 				0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */,

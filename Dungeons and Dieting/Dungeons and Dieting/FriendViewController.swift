@@ -57,17 +57,10 @@ class FriendViewController: UIViewController{
         progressButton.setImage(UIImage(named: "Button"), for: .normal)
         shopButton.setImage(UIImage(named: "Button"), for: .normal)
         
-        friendButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-        itemButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
+        itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-        progressButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-        shopButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-    }
-    
-    @IBAction func toFriend() {
-        let newViewController = FriendViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
+        progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
+        shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
     }
     
     @IBAction func toItem() {

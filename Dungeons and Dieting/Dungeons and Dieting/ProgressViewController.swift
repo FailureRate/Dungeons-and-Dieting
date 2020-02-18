@@ -57,11 +57,10 @@ class ProgressViewController:UIViewController {
         progressButton.setImage(UIImage(named: "Button"), for: .normal)
         shopButton.setImage(UIImage(named: "Button"), for: .normal)
         
-        friendButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-        itemButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
+        friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
+        itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-        progressButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-        shopButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
+        shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
     }
     
     @IBAction func toFriend() {
@@ -78,12 +77,6 @@ class ProgressViewController:UIViewController {
     
     @IBAction func toMap() {
         let newViewController = MapViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    
-    @IBAction func toProgress() {
-        let newViewController = ProgressViewController()
         newViewController.view.backgroundColor = .green
         self.present(newViewController, animated: false, completion: nil)
     }

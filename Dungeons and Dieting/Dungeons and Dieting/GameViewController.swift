@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import CoreLocation
 
 class GameViewController: UIViewController {
 
@@ -39,4 +40,12 @@ class GameViewController: UIViewController {
         mapViewController.view.backgroundColor = .green
         self.present(mapViewController, animated: false, completion: nil)
     }
+    
+  @IBAction func toInvent() {
+      let inventViewController = InventoryViewController()
+      inventViewController.view.backgroundColor = .red
+      self.present(inventViewController , animated: false, completion: nil)
+  }
+  
+    
 }

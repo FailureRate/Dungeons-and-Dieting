@@ -1,5 +1,5 @@
 //
-//  GameViewController2.swift
+//  GameViewController4.swift
 //  Dungeons and Dieting
 //
 //  Created by Arifa Tyrell on 2020-01-21.
@@ -11,7 +11,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class MapViewController: UIViewController {
+class FriendViewController: UIViewController{
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
         progressButton = UIButton()
         shopButton = UIButton()
         super.init(nibName:nil, bundle: nil)
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -93,3 +94,4 @@ class MapViewController: UIViewController {
         self.present(newViewController, animated: false, completion: nil)
     }
 }
+

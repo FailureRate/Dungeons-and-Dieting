@@ -21,14 +21,12 @@ class InventoryViewController:UIViewController
     let LastWtext:UILabel
     let CurWtext:UILabel
     let PlayNamtext:UILabel
-    let level:Int
-    let Cweight:Int
-    let lastwe:Int
+    var level:Int
+    var Cweight:Int
+    var lastwe:Int
     init() {
     
         MenuButton =  UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
-        
-        
         LevelNumtext = UILabel()
         HealthPtext = UILabel()
         LastWtext = UILabel()
@@ -54,10 +52,10 @@ class InventoryViewController:UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        
+
+
     }
     
-    
+
     
 }

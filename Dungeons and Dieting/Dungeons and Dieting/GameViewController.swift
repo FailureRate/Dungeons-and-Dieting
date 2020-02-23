@@ -41,11 +41,7 @@ class GameViewController: UIViewController {
         self.present(mapViewController, animated: false, completion: nil)
     }
     
-  @IBAction func toInvent() {
-      let inventViewController = InventoryViewController()
-      inventViewController.view.backgroundColor = .red
-      self.present(inventViewController , animated: false, completion: nil)
-  }
+
   
     
 }

@@ -18,12 +18,31 @@ class ShopViewController:UIViewController{
     var progressButton: UIButton
     var shopButton: UIButton
     
+    // Shop Items
+    var shopItem1: UIButton
+    var shopItem2: UIButton
+    var shopItem3: UIButton
+    var shopItem4: UIButton
+    var shopItem5: UIButton
+    var shopItem6: UIButton
+    var shopItem7: UIButton
+    var shopItem8: UIButton
+    
     init() {
         friendButton = UIButton()
         itemButton = UIButton()
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        
+        shopItem1 = UIButton()
+        shopItem2 = UIButton()
+        shopItem3 = UIButton()
+        shopItem4 = UIButton()
+        shopItem5 = UIButton()
+        shopItem6 = UIButton()
+        shopItem7 = UIButton()
+        shopItem8 = UIButton()
         super.init(nibName:nil, bundle: nil)
 
     }
@@ -34,6 +53,15 @@ class ShopViewController:UIViewController{
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        
+        shopItem1 = UIButton()
+        shopItem2 = UIButton()
+        shopItem3 = UIButton()
+        shopItem4 = UIButton()
+        shopItem5 = UIButton()
+        shopItem6 = UIButton()
+        shopItem7 = UIButton()
+        shopItem8 = UIButton()
         super.init(coder: aDecoder)
     }
     
@@ -61,6 +89,33 @@ class ShopViewController:UIViewController{
         itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
+        
+        shopItem1 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 200, width: 100, height: 100))
+        shopItem2 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 100, width: 100, height: 100))
+        shopItem3 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY, width: 100, height: 100))
+        shopItem4 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY + 100, width: 100, height: 100))
+        shopItem5 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY - 200, width: 100, height: 100))
+        shopItem6 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY - 100, width: 100, height: 100))
+        shopItem7 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY, width: 100, height: 100))
+        shopItem8 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY + 100, width: 100, height: 100))
+        
+        view.addSubview(shopItem1)
+        view.addSubview(shopItem2)
+        view.addSubview(shopItem3)
+        view.addSubview(shopItem4)
+        view.addSubview(shopItem5)
+        view.addSubview(shopItem6)
+        view.addSubview(shopItem7)
+        view.addSubview(shopItem8)
+        
+        shopItem1.setImage(UIImage(named: "herosword"), for: .normal)
+        shopItem2.setImage(UIImage(named: "herosword"), for: .normal)
+        shopItem3.setImage(UIImage(named: "herosword"), for: .normal)
+        shopItem4.setImage(UIImage(named: "herosword"), for: .normal)
+        shopItem5.setImage(UIImage(named: "herosword"), for: .normal)
+        shopItem6.setImage(UIImage(named: "herosword"), for: .normal)
+        shopItem7.setImage(UIImage(named: "herosword"), for: .normal)
+        shopItem8.setImage(UIImage(named: "herosword"), for: .normal)
     }
     
     @IBAction func toFriend() {

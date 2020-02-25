@@ -53,7 +53,18 @@ class ProgressViewController:UIViewController {
         calorieTextField0.center = self.view.center;
         calorieTextField0.backgroundColor = .white;
         calorieTextField0.keyboardType = .numberPad;
+        calorieTextField0.placeholder = "Please Input Calories`"
+        calorieTextField0.
                 
+        
+        //Tool Bar code
+        let toolBar = UIToolbar();
+        toolBar.sizeToFit();
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([doneButton], animated: false)
+        // set all keyobards to have toolbar
+        calorieTextField0.inputAccessoryView = toolBar;
         
         view.addSubview(friendButton)
         view.addSubview(itemButton)
@@ -100,5 +111,8 @@ class ProgressViewController:UIViewController {
         newViewController.view.backgroundColor = .orange
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+    }
+    @objc func doneClicked(){
+        view.endEditing(true);
     }
 }

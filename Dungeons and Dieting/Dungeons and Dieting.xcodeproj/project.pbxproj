@@ -287,6 +287,7 @@
 				TargetAttributes = {
 					9D26A9DE23D7982F00836B7D = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1130;
 					};
 					9D26A9F823D7983000836B7D = {
 						CreatedOnToolsVersion = 10.3;
@@ -536,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +551,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "threeplayerproductions.Dungeons-and-Dieting";
 				PRODUCT_NAME = "Dungeons-and-Dieting";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dungeons and Dieting/Dungeons and Dieting-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -558,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -571,6 +576,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "threeplayerproductions.Dungeons-and-Dieting";
 				PRODUCT_NAME = "Dungeons-and-Dieting";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dungeons and Dieting/Dungeons and Dieting-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

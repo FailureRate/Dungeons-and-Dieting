@@ -28,6 +28,8 @@ class ShopViewController:UIViewController{
     var shopItem7: UIButton
     var shopItem8: UIButton
     
+    var text: UILabel
+    
     init() {
         friendButton = UIButton()
         itemButton = UIButton()
@@ -43,6 +45,8 @@ class ShopViewController:UIViewController{
         shopItem6 = UIButton()
         shopItem7 = UIButton()
         shopItem8 = UIButton()
+        
+        text = UILabel()
         super.init(nibName:nil, bundle: nil)
 
     }
@@ -62,6 +66,8 @@ class ShopViewController:UIViewController{
         shopItem6 = UIButton()
         shopItem7 = UIButton()
         shopItem8 = UIButton()
+        
+        text = UILabel()
         super.init(coder: aDecoder)
     }
     
@@ -116,6 +122,11 @@ class ShopViewController:UIViewController{
         shopItem6.setImage(UIImage(named: "herosword"), for: .normal)
         shopItem7.setImage(UIImage(named: "herosword"), for: .normal)
         shopItem8.setImage(UIImage(named: "herosword"), for: .normal)
+        
+        text = UILabel(frame: CGRect (x: view.bounds.midX - 100, y: view.bounds.midY - 200, width: 100, height: 100))
+        view.addSubview(text)
+        
+        text.text = "Hero Sword: 1000g"
     }
     
     @IBAction func toFriend() {

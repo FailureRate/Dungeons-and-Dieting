@@ -12,11 +12,14 @@ import SpriteKit
 import GameplayKit
 
 class ProgressViewController:UIViewController {
+    // These are all the buttons for the menu
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
     var progressButton: UIButton
     var shopButton: UIButton
+    // UI Text Fields
+    var calorieTextField0:UITextField;
     
     init() {
         friendButton = UIButton()
@@ -24,6 +27,7 @@ class ProgressViewController:UIViewController {
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        calorieTextField0 = UITextField()
         super.init(nibName:nil, bundle: nil)
 
     }
@@ -34,6 +38,7 @@ class ProgressViewController:UIViewController {
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        calorieTextField0 = UITextField()
         super.init(coder: aDecoder)
     }
     
@@ -44,12 +49,18 @@ class ProgressViewController:UIViewController {
         mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
         progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
+        calorieTextField0 =  UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
+        calorieTextField0.center = self.view.center;
+        calorieTextField0.backgroundColor = .white;
+        calorieTextField0.keyboardType = .numberPad;
+                
         
         view.addSubview(friendButton)
         view.addSubview(itemButton)
         view.addSubview(mapButton)
         view.addSubview(progressButton)
         view.addSubview(shopButton)
+        view.addSubview(calorieTextField0);
         
         friendButton.setImage(UIImage(named: "Button"), for: .normal)
         itemButton.setImage(UIImage(named: "Button"), for: .normal)

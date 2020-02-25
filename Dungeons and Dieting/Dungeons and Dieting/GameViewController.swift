@@ -13,6 +13,8 @@ import CoreLocation
 
 class GameViewController: UIViewController, CLLocationManagerDelegate {
 
+    // Changed Nothing
+    
     var playButton: UIButton
     let LocationM = CLLocationManager()
     let Clientid = "WP0KU1PZ5EZELDOTL2MVVWEK0Y4PSU45TMHLHUCV4QFBK4OI"
@@ -21,22 +23,21 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     
         
     init() {
-        playButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        playButton = UIButton(frame: CGRect (x: 0, y: 0, width: 100, height: 100))
         super.init(nibName:nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        playButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        playButton = UIButton(frame: CGRect (x: 0, y: 0, width: 100, height: 100))
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(playButton)
-        playButton.setImage(UIImage(named: "circle"), for: .normal)
+        playButton.setImage(UIImage(named: "Button"), for: .normal)
         playButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
            
-        playButton.addTarget(self, action: #selector(toInvent), for: .touchDown)
         
         playButton.translatesAutoresizingMaskIntoConstraints = false
         playButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -50,6 +51,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         mapViewController.view.backgroundColor = .green
         self.present(mapViewController, animated: false, completion: nil)
     }
+
     
 
   
@@ -104,4 +106,5 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         print("Location update falied , \(error)")
     }
     
+
 }

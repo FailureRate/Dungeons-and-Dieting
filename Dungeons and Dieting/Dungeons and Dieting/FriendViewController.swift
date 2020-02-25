@@ -1,5 +1,5 @@
 //
-//  GameViewController2.swift
+//  GameViewController4.swift
 //  Dungeons and Dieting
 //
 //  Created by Arifa Tyrell on 2020-01-21.
@@ -11,7 +11,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class MapViewController: UIViewController {
+class FriendViewController: UIViewController{
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
         progressButton = UIButton()
         shopButton = UIButton()
         super.init(nibName:nil, bundle: nil)
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -56,20 +57,20 @@ class MapViewController: UIViewController {
         progressButton.setImage(UIImage(named: "Button"), for: .normal)
         shopButton.setImage(UIImage(named: "Button"), for: .normal)
         
-        friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
         itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
+        mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
     }
     
-    @IBAction func toFriend() {
-        let newViewController = FriendViewController()
+    @IBAction func toItem() {
+        let newViewController = InventoryViewController()
         newViewController.view.backgroundColor = .green
         self.present(newViewController, animated: false, completion: nil)
     }
     
-    @IBAction func toItem() {
-        let newViewController = InventoryViewController()
+    @IBAction func toMap() {
+        let newViewController = MapViewController()
         newViewController.view.backgroundColor = .green
         self.present(newViewController, animated: false, completion: nil)
     }
@@ -86,3 +87,4 @@ class MapViewController: UIViewController {
         self.present(newViewController, animated: false, completion: nil)
     }
 }
+

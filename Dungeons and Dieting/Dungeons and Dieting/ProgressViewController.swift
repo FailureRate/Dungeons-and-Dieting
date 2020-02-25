@@ -1,5 +1,5 @@
 //
-//  GameViewController2.swift
+//  GameViewController5.swift
 //  Dungeons and Dieting
 //
 //  Created by Arifa Tyrell on 2020-01-21.
@@ -11,7 +11,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class MapViewController: UIViewController {
+class ProgressViewController:UIViewController {
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
         progressButton = UIButton()
         shopButton = UIButton()
         super.init(nibName:nil, bundle: nil)
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -58,7 +59,7 @@ class MapViewController: UIViewController {
         
         friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
         itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
-        progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
+        mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
     }
     
@@ -74,8 +75,8 @@ class MapViewController: UIViewController {
         self.present(newViewController, animated: false, completion: nil)
     }
     
-    @IBAction func toProgress() {
-        let newViewController = ProgressViewController()
+    @IBAction func toMap() {
+        let newViewController = MapViewController()
         newViewController.view.backgroundColor = .green
         self.present(newViewController, animated: false, completion: nil)
     }

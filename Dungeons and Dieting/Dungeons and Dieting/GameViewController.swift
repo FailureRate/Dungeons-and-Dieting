@@ -39,8 +39,7 @@ class GameViewController: UIViewController {
     
     @IBAction func toMap() {
         let mapViewController = MapViewController()
-        mapViewController.view.backgroundColor = .white
-        mapViewController.modalPresentationStyle = .fullScreen
+        mapViewController.view.backgroundColor = .green
         self.present(mapViewController, animated: false, completion: nil)
     }
 }

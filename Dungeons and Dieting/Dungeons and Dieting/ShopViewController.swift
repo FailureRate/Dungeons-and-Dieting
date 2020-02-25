@@ -38,7 +38,7 @@ class ShopViewController:UIViewController{
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
@@ -62,34 +62,35 @@ class ShopViewController:UIViewController{
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
     }
-    @IBAction func toMap() {
-        let newViewController = MapViewController()
-        newViewController.view.backgroundColor = .green
+
+    
+    @IBAction func toFriend() {
+        let newViewController = FriendViewController()
+        newViewController.view.backgroundColor = .blue
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func toItem() {
+        let newViewController = InventoryViewController()
+        newViewController.view.backgroundColor = .red
+        newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }
     
 
-    @IBAction func toFriend() {
-          let newViewController = FriendViewController()
-          newViewController.view.backgroundColor = .blue
-          self.present(newViewController, animated: false, completion: nil)
-      }
-      
-      @IBAction func toItem() {
-          let newViewController = InventoryViewController()
-          newViewController.view.backgroundColor = .red
-          self.present(newViewController, animated: false, completion: nil)
-      }
-      
-      @IBAction func toProgress() {
-          let newViewController = ProgressViewController()
-          newViewController.view.backgroundColor = .purple
-          self.present(newViewController, animated: false, completion: nil)
-      }
-      
-      @IBAction func toShop() {
-          let newViewController = ShopViewController()
-          newViewController.view.backgroundColor = .orange
-          self.present(newViewController, animated: false, completion: nil)
-      }
+    @IBAction func toMap() {
+        let newViewController = MapViewController()
+        newViewController.view.backgroundColor = .green
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func toProgress() {
+        let newViewController = ProgressViewController()
+        newViewController.view.backgroundColor = .purple
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
+
 }

@@ -62,29 +62,35 @@ class FriendViewController: UIViewController{
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
     }
-    
-    @IBAction func toItem() {
-        let newViewController = InventoryViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    
-    @IBAction func toMap() {
-        let newViewController = MapViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    
-    @IBAction func toProgress() {
-        let newViewController = ProgressViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    
-    @IBAction func toShop() {
-        let newViewController = ShopViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
+     @IBAction func toMap() {
+          let newViewController = MapViewController()
+          newViewController.view.backgroundColor = .green
+          self.present(newViewController, animated: false, completion: nil)
+      }
+      
+
+      @IBAction func toFriend() {
+            let newViewController = FriendViewController()
+            newViewController.view.backgroundColor = .blue
+            self.present(newViewController, animated: false, completion: nil)
+        }
+        
+        @IBAction func toItem() {
+            let newViewController = InventoryViewController()
+            newViewController.view.backgroundColor = .red
+            self.present(newViewController, animated: false, completion: nil)
+        }
+        
+        @IBAction func toProgress() {
+            let newViewController = ProgressViewController()
+            newViewController.view.backgroundColor = .purple
+            self.present(newViewController, animated: false, completion: nil)
+        }
+        
+        @IBAction func toShop() {
+            let newViewController = ShopViewController()
+            newViewController.view.backgroundColor = .orange
+            self.present(newViewController, animated: false, completion: nil)
+        }
 }
 

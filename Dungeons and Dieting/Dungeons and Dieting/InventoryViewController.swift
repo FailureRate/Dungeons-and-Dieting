@@ -22,7 +22,7 @@ class InventoryViewController:UIViewController
     
   
     var HealthPtext:UILabel
-    var LastWtext:UILabel
+    @IBOutlet var LastWtext:UILabel!
     var CurWtext:UILabel
     var PlayNamtext:UILabel
 
@@ -36,10 +36,6 @@ class InventoryViewController:UIViewController
         LastWtext = UILabel()
         CurWtext = UILabel()
         PlayNamtext = UILabel()
-        HealthPtext.text = "Health"
-        LastWtext.text = " Last Recorded Weight"
-        CurWtext.text = " current Weight goal"
-        PlayNamtext.text = "playername "
         level = 0
         Cweight = 0
         lastwe = 0
@@ -65,9 +61,6 @@ class InventoryViewController:UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
     
-    
-
-
         friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
@@ -92,26 +85,34 @@ class InventoryViewController:UIViewController
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
     }
     
-    @IBAction func toFriend() {
-        let newViewController = FriendViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    
     @IBAction func toMap() {
-        let newViewController = MapViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    
-    @IBAction func toProgress() {
-        let newViewController = ProgressViewController()
-        newViewController.view.backgroundColor = .green
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    @IBAction func toShop() {
+         let newViewController = MapViewController()
+         newViewController.view.backgroundColor = .green
+         self.present(newViewController, animated: false, completion: nil)
+     }
+     
+
+     @IBAction func toFriend() {
+           let newViewController = FriendViewController()
+           newViewController.view.backgroundColor = .blue
+           self.present(newViewController, animated: false, completion: nil)
+       }
+       
+       @IBAction func toItem() {
+           let newViewController = InventoryViewController()
+           newViewController.view.backgroundColor = .red
+           self.present(newViewController, animated: false, completion: nil)
+       }
+       
+       @IBAction func toProgress() {
            let newViewController = ProgressViewController()
-           newViewController.view.backgroundColor = .green
+           newViewController.view.backgroundColor = .purple
+           self.present(newViewController, animated: false, completion: nil)
+       }
+       
+       @IBAction func toShop() {
+           let newViewController = ShopViewController()
+           newViewController.view.backgroundColor = .orange
            self.present(newViewController, animated: false, completion: nil)
        }
 }

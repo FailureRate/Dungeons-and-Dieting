@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D37767B2405B24000858FEE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37767A2405B24000858FEE /* QuestionViewController.swift */; };
 		0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A5E23D79CF200309F51 /* MapViewController.swift */; };
 		0D519A6123D79D0400309F51 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6023D79D0400309F51 /* InventoryViewController.swift */; };
 		0D519A6323D79D2900309F51 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6223D79D2900309F51 /* FriendViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D37767A2405B24000858FEE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		0D519A5E23D79CF200309F51 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D519A6023D79D0400309F51 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		0D519A6223D79D2900309F51 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				0D9D28C823E8A6AA00110705 /* module.modulemap */,
 				9D26A9E823D7982F00836B7D /* GameScene.swift */,
 				9D26A9EA23D7982F00836B7D /* GameViewController.swift */,
+				0D37767A2405B24000858FEE /* QuestionViewController.swift */,
 				0D519A5E23D79CF200309F51 /* MapViewController.swift */,
 				0D519A6023D79D0400309F51 /* InventoryViewController.swift */,
 				0D519A6223D79D2900309F51 /* FriendViewController.swift */,
@@ -363,6 +366,7 @@
 				0D519A6723D79D6200309F51 /* ShopViewController.swift in Sources */,
 				0D519A6323D79D2900309F51 /* FriendViewController.swift in Sources */,
 				0D519A6523D79D4800309F51 /* ProgressViewController.swift in Sources */,
+				0D37767B2405B24000858FEE /* QuestionViewController.swift in Sources */,
 				9AB75DC223FC874C005A65F7 /* DietView.swift in Sources */,
 				9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */,
 				0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */,

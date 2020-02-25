@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D37767B2405B24000858FEE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37767A2405B24000858FEE /* QuestionViewController.swift */; };
 		0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A5E23D79CF200309F51 /* MapViewController.swift */; };
 		0D519A6123D79D0400309F51 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6023D79D0400309F51 /* InventoryViewController.swift */; };
 		0D519A6323D79D2900309F51 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6223D79D2900309F51 /* FriendViewController.swift */; };
@@ -25,6 +26,7 @@
 		0D9D28D923E8A9E200110705 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D023E8A9E100110705 /* GoogleDataTransport.framework */; };
 		0D9D28DA23E8A9E200110705 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */; };
 		0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */; };
+		521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		9AB75DC223FC874C005A65F7 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB75DC123FC874C005A65F7 /* DietView.swift */; };
 		9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26A9E223D7982F00836B7D /* AppDelegate.swift */; };
@@ -57,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D37767A2405B24000858FEE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		0D519A5E23D79CF200309F51 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D519A6023D79D0400309F51 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		0D519A6223D79D2900309F51 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		0D9D28D023E8A9E100110705 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
 		0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		521087D32402C75D00AB311B /* libswiftCoreLocation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCoreLocation.tbd; path = usr/lib/swift/libswiftCoreLocation.tbd; sourceTree = SDKROOT; };
 		52ECEEA523F5129F009553C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9AB75DC123FC874C005A65F7 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
 		9D26A9DF23D7982F00836B7D /* Dungeons-and-Dieting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dungeons-and-Dieting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,7 @@
 				0D9D28C723E8A66500110705 /* libsqlite3.tbd in Frameworks */,
 				52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */,
 				0D9D28D923E8A9E200110705 /* GoogleDataTransport.framework in Frameworks */,
+				521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */,
 				0D9D28D723E8A9E200110705 /* FirebaseCore.framework in Frameworks */,
 				0D9D28D823E8A9E200110705 /* FIRAnalyticsConnector.framework in Frameworks */,
 				0D9D28C523E8A5EB00110705 /* StoreKit.framework in Frameworks */,
@@ -138,6 +143,7 @@
 		0D9D28C323E8A5EB00110705 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				521087D32402C75D00AB311B /* libswiftCoreLocation.tbd */,
 				52ECEEA523F5129F009553C9 /* CoreLocation.framework */,
 				0D9D28C623E8A66500110705 /* libsqlite3.tbd */,
 				0D9D28C423E8A5EB00110705 /* StoreKit.framework */,
@@ -188,6 +194,7 @@
 				0D9D28C823E8A6AA00110705 /* module.modulemap */,
 				9D26A9E823D7982F00836B7D /* GameScene.swift */,
 				9D26A9EA23D7982F00836B7D /* GameViewController.swift */,
+				0D37767A2405B24000858FEE /* QuestionViewController.swift */,
 				0D519A5E23D79CF200309F51 /* MapViewController.swift */,
 				0D519A6023D79D0400309F51 /* InventoryViewController.swift */,
 				0D519A6223D79D2900309F51 /* FriendViewController.swift */,
@@ -360,6 +367,7 @@
 				0D519A6723D79D6200309F51 /* ShopViewController.swift in Sources */,
 				0D519A6323D79D2900309F51 /* FriendViewController.swift in Sources */,
 				0D519A6523D79D4800309F51 /* ProgressViewController.swift in Sources */,
+				0D37767B2405B24000858FEE /* QuestionViewController.swift in Sources */,
 				9AB75DC223FC874C005A65F7 /* DietView.swift in Sources */,
 				9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */,
 				0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */,

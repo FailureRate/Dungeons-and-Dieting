@@ -62,6 +62,7 @@ class ShopViewController:UIViewController{
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
     }
+
     
     @IBAction func toFriend() {
         let newViewController = FriendViewController()
@@ -77,6 +78,7 @@ class ShopViewController:UIViewController{
         self.present(newViewController, animated: false, completion: nil)
     }
     
+
     @IBAction func toMap() {
         let newViewController = MapViewController()
         newViewController.view.backgroundColor = .green
@@ -90,4 +92,5 @@ class ShopViewController:UIViewController{
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }
+
 }

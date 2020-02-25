@@ -24,6 +24,13 @@ class InventoryViewController:UIViewController
       var Leveltext:UILabel
     var CurWtext:UILabel
     var PlayNamtext:UILabel
+    
+    var inventoryUIimage:UIImageView
+    
+    
+    var equippedtext:UILabel
+    var daliyquesttext:UILabel
+    var Inventorytext:UILabel
 
     let level:Int
     let Cweight:Int
@@ -33,11 +40,15 @@ class InventoryViewController:UIViewController
 
 
     init() {
-
+        inventoryUIimage = UIImageView()
         HealthPtext = UILabel()
         Leveltext = UILabel()
         CurWtext = UILabel()
         PlayNamtext = UILabel()
+        equippedtext = UILabel()
+        daliyquesttext = UILabel()
+        Inventorytext = UILabel()
+        
         level = 0
         Cweight = 0
         lastwe = 0
@@ -67,10 +78,16 @@ class InventoryViewController:UIViewController
           let framelable3 :CGRect = CGRect(x:50,y:20,width: UIScreen.main.bounds.width - 60 , height: 190)
           let framelable4 :CGRect = CGRect(x:20,y:40,width: UIScreen.main.bounds.width - 90 , height: 200)
           let framelable5 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-        
+          let framelable6 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
+              
+        let framelable7 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
+              
+        let framelable8 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
+              
+             
         LastWtext =  UILabel(frame: framelable)
         LastWtext.text = "last Cal"
-        
+      
         CurWtext  =  UILabel(frame: framelable2)
         CurWtext.text = " cur cal"
        
@@ -83,11 +100,24 @@ class InventoryViewController:UIViewController
         Leveltext  =  UILabel(frame: framelable5)
         Leveltext.text = "Level"
         
+        equippedtext = UILabel(frame: framelable6)
+        equippedtext.text = "Equipment"
+        
+        daliyquesttext = UILabel(frame: framelable7)
+        daliyquesttext.text = "Daily Quest"
+       
+        Inventorytext = UILabel(frame: framelable8)
+        Inventorytext.text = "Inventory"
+
+        
         self.view.addSubview(LastWtext)
         self.view.addSubview(CurWtext)
         self.view.addSubview(PlayNamtext)
         self.view.addSubview(HealthPtext)
         self.view.addSubview(Leveltext)
+        self.view.addSubview(equippedtext)
+        self.view.addSubview(daliyquesttext)
+        self.view.addSubview(Inventorytext)
         
         friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))

@@ -19,43 +19,31 @@ class MapViewController: UIViewController {
     var shopButton: UIButton
     
     init() {
-        friendButton = UIButton()
-        itemButton = UIButton()
-        mapButton = UIButton()
-        progressButton = UIButton()
-        shopButton = UIButton()
+        friendButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        itemButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        mapButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        progressButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        shopButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
         super.init(nibName:nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        friendButton = UIButton()
-        itemButton = UIButton()
-        mapButton = UIButton()
-        progressButton = UIButton()
-        shopButton = UIButton()
+        friendButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        itemButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        mapButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        progressButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
+        shopButton = UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
-        itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))
-        mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
-        progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
-        shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         
         view.addSubview(friendButton)
         view.addSubview(itemButton)
         view.addSubview(mapButton)
         view.addSubview(progressButton)
         view.addSubview(shopButton)
-        
-        friendButton.setImage(UIImage(named: "Button"), for: .normal)
-        itemButton.setImage(UIImage(named: "Button"), for: .normal)
-        mapButton.setImage(UIImage(named: "Button"), for: .normal)
-        progressButton.setImage(UIImage(named: "Button"), for: .normal)
-        shopButton.setImage(UIImage(named: "Button"), for: .normal)
-        
         friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
         itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)

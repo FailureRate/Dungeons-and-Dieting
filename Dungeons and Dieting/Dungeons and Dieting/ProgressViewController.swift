@@ -52,9 +52,19 @@ class ProgressViewController:UIViewController {
         calorieTextField0 =  UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
         calorieTextField0.center = self.view.center;
         calorieTextField0.backgroundColor = .white;
+        guard let customFont = UIFont(name: "ComicSansMS" , size: 20) else {
+        fatalError("""
+            Failed to load the "Comic Sans MS" font.
+            Make sure the font file is included in the project and the font name is spelled correctly.
+            """
+            )
+        }
+        calorieTextField0.font = UIFontMetrics.default.scaledFont(for: customFont)
+            
         calorieTextField0.keyboardType = .numberPad;
-        calorieTextField0.placeholder = "Please Input Calories`"
-        calorieTextField0.borderStyle = .bezel
+        calorieTextField0.placeholder = "Please Input Calories"
+        calorieTextField0.borderStyle = .line
+
                 
         
         //Tool Bar code

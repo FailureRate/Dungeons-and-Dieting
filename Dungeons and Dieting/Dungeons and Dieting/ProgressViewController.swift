@@ -65,28 +65,28 @@ class ProgressViewController:UIViewController {
     
     @IBAction func toFriend() {
         let newViewController = FriendViewController()
-        newViewController.view.backgroundColor = .white
+        newViewController.view.backgroundColor = .blue
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }
     
     @IBAction func toItem() {
         let newViewController = InventoryViewController()
-        newViewController.view.backgroundColor = .white
+        newViewController.view.backgroundColor = .red
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }
     
     @IBAction func toMap() {
         let newViewController = MapViewController()
-        newViewController.view.backgroundColor = .white
+        newViewController.view.backgroundColor = .green
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }
     
     @IBAction func toShop() {
         let newViewController = ShopViewController()
-        newViewController.view.backgroundColor = .white
+        newViewController.view.backgroundColor = .orange
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }

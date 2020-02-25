@@ -14,8 +14,12 @@ import GameplayKit
 
 class InventoryViewController:UIViewController
 {
+    var friendButton: UIButton
+    var itemButton: UIButton
+    var mapButton: UIButton
+    var progressButton: UIButton
+    var shopButton: UIButton
     
-    var MenuButton: UIButton
     let LevelNumtext:UILabel
     let HealthPtext:UILabel
     let LastWtext:UILabel
@@ -24,11 +28,8 @@ class InventoryViewController:UIViewController
     let level:Int
     let Cweight:Int
     let lastwe:Int
-    init() {
     
-        MenuButton =  UIButton(frame: CGRect (x: 0, y: 0, width: 50, height: 50))
-        
-        
+    init() {
         LevelNumtext = UILabel()
         HealthPtext = UILabel()
         LastWtext = UILabel()
@@ -43,18 +44,26 @@ class InventoryViewController:UIViewController
         Cweight = 0
         lastwe = 0
         
-            super.init(nibName:nil, bundle: nil)
-    
+        friendButton = UIButton()
+        itemButton = UIButton()
+        mapButton = UIButton()
+        progressButton = UIButton()
+        shopButton = UIButton()
+        super.init(nibName:nil, bundle: nil)    
     }
     
     
     required init?(coder: NSCoder) {
+        friendButton = UIButton()
+        itemButton = UIButton()
+        mapButton = UIButton()
+        progressButton = UIButton()
+        shopButton = UIButton()
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
@@ -78,11 +87,28 @@ class InventoryViewController:UIViewController
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
     }
-        
+    
+    @IBAction func toFriend() {
+        let newViewController = FriendViewController()
+        newViewController.view.backgroundColor = .green
+        self.present(newViewController, animated: false, completion: nil)
     }
+    
     @IBAction func toMap() {
         let newViewController = MapViewController()
         newViewController.view.backgroundColor = .green
         self.present(newViewController, animated: false, completion: nil)
-    }    
+    }
+    
+    @IBAction func toProgress() {
+        let newViewController = ProgressViewController()
+        newViewController.view.backgroundColor = .green
+        self.present(newViewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func toShop() {
+        let newViewController = ShopViewController()
+        newViewController.view.backgroundColor = .green
+        self.present(newViewController, animated: false, completion: nil)
+    }
 }

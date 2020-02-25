@@ -54,7 +54,7 @@ class ProgressViewController:UIViewController {
         calorieTextField0.backgroundColor = .white;
         calorieTextField0.keyboardType = .numberPad;
         calorieTextField0.placeholder = "Please Input Calories`"
-        calorieTextField0.
+        calorieTextField0.borderStyle = .bezel
                 
         
         //Tool Bar code

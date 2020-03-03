@@ -27,6 +27,7 @@
 		0D9D28DA23E8A9E200110705 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */; };
 		0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */; };
 		521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
+		5268F6CA240B34890019B54B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268F6C9240B34890019B54B /* SettingViewController.swift */; };
 		52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		9A29FF5A2405D80300100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };
 		9A29FF5B2405DA0D00100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };
@@ -85,6 +86,7 @@
 		0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		521087D32402C75D00AB311B /* libswiftCoreLocation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCoreLocation.tbd; path = usr/lib/swift/libswiftCoreLocation.tbd; sourceTree = SDKROOT; };
+		5268F6C9240B34890019B54B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		52ECEEA523F5129F009553C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A29FF592405D80300100222 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		9A29FF632405DBB300100222 /* Comic Sans MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comic Sans MS.ttf"; path = "Dungeons and Dieting/Fonts/Comic Sans MS.ttf"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				9D26A9E823D7982F00836B7D /* GameScene.swift */,
 				9D26A9EA23D7982F00836B7D /* GameViewController.swift */,
 				0D37767A2405B24000858FEE /* QuestionViewController.swift */,
+				5268F6C9240B34890019B54B /* SettingViewController.swift */,
 				0D519A5E23D79CF200309F51 /* MapViewController.swift */,
 				0D519A6023D79D0400309F51 /* InventoryViewController.swift */,
 				0D519A6223D79D2900309F51 /* FriendViewController.swift */,
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D519A6123D79D0400309F51 /* InventoryViewController.swift in Sources */,
+				5268F6CA240B34890019B54B /* SettingViewController.swift in Sources */,
 				9D26A9E923D7982F00836B7D /* GameScene.swift in Sources */,
 				9D26A9EB23D7982F00836B7D /* GameViewController.swift in Sources */,
 				0D519A6723D79D6200309F51 /* ShopViewController.swift in Sources */,

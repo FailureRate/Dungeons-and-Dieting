@@ -400,6 +400,13 @@ class InventoryViewController:UIViewController
         self.present(newViewController, animated: false, completion: nil)
     }
     
+    @IBAction func toItem() {
+        let newViewController = InventoryViewController()
+        newViewController.view.backgroundColor = .red
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
+    
     @IBAction func toMap() {
         let newViewController = MapViewController()
         newViewController.view.backgroundColor = .green

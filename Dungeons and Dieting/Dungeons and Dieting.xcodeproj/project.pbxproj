@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D37767B2405B24000858FEE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37767A2405B24000858FEE /* QuestionViewController.swift */; };
 		0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A5E23D79CF200309F51 /* MapViewController.swift */; };
 		0D519A6123D79D0400309F51 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6023D79D0400309F51 /* InventoryViewController.swift */; };
 		0D519A6323D79D2900309F51 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D519A6223D79D2900309F51 /* FriendViewController.swift */; };
@@ -25,7 +26,12 @@
 		0D9D28D923E8A9E200110705 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D023E8A9E100110705 /* GoogleDataTransport.framework */; };
 		0D9D28DA23E8A9E200110705 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */; };
 		0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */; };
+		521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
+		9A29FF5A2405D80300100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };
+		9A29FF5B2405DA0D00100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };
+		9A29FF5C2405DA0D00100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };
+		9A29FF642405DBB300100222 /* Comic Sans MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF632405DBB300100222 /* Comic Sans MS.ttf */; };
 		9AB75DC223FC874C005A65F7 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB75DC123FC874C005A65F7 /* DietView.swift */; };
 		9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26A9E223D7982F00836B7D /* AppDelegate.swift */; };
 		9D26A9E523D7982F00836B7D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9D26A9E423D7982F00836B7D /* GameScene.sks */; };
@@ -57,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D37767A2405B24000858FEE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		0D519A5E23D79CF200309F51 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D519A6023D79D0400309F51 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		0D519A6223D79D2900309F51 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +84,10 @@
 		0D9D28D023E8A9E100110705 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
 		0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		521087D32402C75D00AB311B /* libswiftCoreLocation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCoreLocation.tbd; path = usr/lib/swift/libswiftCoreLocation.tbd; sourceTree = SDKROOT; };
 		52ECEEA523F5129F009553C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9A29FF592405D80300100222 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		9A29FF632405DBB300100222 /* Comic Sans MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comic Sans MS.ttf"; path = "Dungeons and Dieting/Fonts/Comic Sans MS.ttf"; sourceTree = "<group>"; };
 		9AB75DC123FC874C005A65F7 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
 		9D26A9DF23D7982F00836B7D /* Dungeons-and-Dieting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dungeons-and-Dieting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D26A9E223D7982F00836B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +116,7 @@
 				0D9D28C723E8A66500110705 /* libsqlite3.tbd in Frameworks */,
 				52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */,
 				0D9D28D923E8A9E200110705 /* GoogleDataTransport.framework in Frameworks */,
+				521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */,
 				0D9D28D723E8A9E200110705 /* FirebaseCore.framework in Frameworks */,
 				0D9D28D823E8A9E200110705 /* FIRAnalyticsConnector.framework in Frameworks */,
 				0D9D28C523E8A5EB00110705 /* StoreKit.framework in Frameworks */,
@@ -138,6 +149,7 @@
 		0D9D28C323E8A5EB00110705 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				521087D32402C75D00AB311B /* libswiftCoreLocation.tbd */,
 				52ECEEA523F5129F009553C9 /* CoreLocation.framework */,
 				0D9D28C623E8A66500110705 /* libsqlite3.tbd */,
 				0D9D28C423E8A5EB00110705 /* StoreKit.framework */,
@@ -148,6 +160,7 @@
 		9D26A9D623D7982F00836B7D = {
 			isa = PBXGroup;
 			children = (
+				9A29FF632405DBB300100222 /* Comic Sans MS.ttf */,
 				9AB75DC123FC874C005A65F7 /* DietView.swift */,
 				0D9D28CF23E8A9E100110705 /* FIRAnalyticsConnector.framework */,
 				0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */,
@@ -188,6 +201,7 @@
 				0D9D28C823E8A6AA00110705 /* module.modulemap */,
 				9D26A9E823D7982F00836B7D /* GameScene.swift */,
 				9D26A9EA23D7982F00836B7D /* GameViewController.swift */,
+				0D37767A2405B24000858FEE /* QuestionViewController.swift */,
 				0D519A5E23D79CF200309F51 /* MapViewController.swift */,
 				0D519A6023D79D0400309F51 /* InventoryViewController.swift */,
 				0D519A6223D79D2900309F51 /* FriendViewController.swift */,
@@ -195,6 +209,7 @@
 				0D519A6623D79D6200309F51 /* ShopViewController.swift */,
 				9D26A9EC23D7982F00836B7D /* Main.storyboard */,
 				9D26A9EF23D7983000836B7D /* Assets.xcassets */,
+				9A29FF592405D80300100222 /* Fonts */,
 				9D26A9F123D7983000836B7D /* LaunchScreen.storyboard */,
 				9D26A9F423D7983000836B7D /* Info.plist */,
 			);
@@ -287,6 +302,7 @@
 				TargetAttributes = {
 					9D26A9DE23D7982F00836B7D = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1130;
 					};
 					9D26A9F823D7983000836B7D = {
 						CreatedOnToolsVersion = 10.3;
@@ -323,12 +339,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A29FF642405DBB300100222 /* Comic Sans MS.ttf in Resources */,
 				9D26A9EE23D7982F00836B7D /* Main.storyboard in Resources */,
 				9D26A9E523D7982F00836B7D /* GameScene.sks in Resources */,
 				9D26A9F023D7983000836B7D /* Assets.xcassets in Resources */,
 				9D26A9F323D7983000836B7D /* LaunchScreen.storyboard in Resources */,
 				9D26A9E723D7982F00836B7D /* Actions.sks in Resources */,
 				0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */,
+				9A29FF5A2405D80300100222 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A29FF5B2405DA0D00100222 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A29FF5C2405DA0D00100222 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +379,7 @@
 				0D519A6723D79D6200309F51 /* ShopViewController.swift in Sources */,
 				0D519A6323D79D2900309F51 /* FriendViewController.swift in Sources */,
 				0D519A6523D79D4800309F51 /* ProgressViewController.swift in Sources */,
+				0D37767B2405B24000858FEE /* QuestionViewController.swift in Sources */,
 				9AB75DC223FC874C005A65F7 /* DietView.swift in Sources */,
 				9D26A9E323D7982F00836B7D /* AppDelegate.swift in Sources */,
 				0D519A5F23D79CF200309F51 /* MapViewController.swift in Sources */,
@@ -536,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +571,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "threeplayerproductions.Dungeons-and-Dieting";
 				PRODUCT_NAME = "Dungeons-and-Dieting";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -558,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

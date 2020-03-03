@@ -12,11 +12,14 @@ import SpriteKit
 import GameplayKit
 
 class ProgressViewController:UIViewController {
+    // These are all the buttons for the menu
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
     var progressButton: UIButton
     var shopButton: UIButton
+    // UI Text Fields
+    var calorieTextField0:UITextField;
     
     init() {
         friendButton = UIButton()
@@ -24,6 +27,7 @@ class ProgressViewController:UIViewController {
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        calorieTextField0 = UITextField()
         super.init(nibName:nil, bundle: nil)
 
     }
@@ -34,6 +38,7 @@ class ProgressViewController:UIViewController {
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        calorieTextField0 = UITextField()
         super.init(coder: aDecoder)
     }
     
@@ -44,12 +49,39 @@ class ProgressViewController:UIViewController {
         mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
         progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
+        calorieTextField0 =  UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
+        calorieTextField0.center = self.view.center;
+        calorieTextField0.backgroundColor = .white;
+        guard let customFont = UIFont(name: "ComicSansMS" , size: 20) else {
+        fatalError("""
+            Failed to load the "Comic Sans MS" font.
+            Make sure the font file is included in the project and the font name is spelled correctly.
+            """
+            )
+        }
+        calorieTextField0.font = UIFontMetrics.default.scaledFont(for: customFont)
+            
+        calorieTextField0.keyboardType = .numberPad;
+        calorieTextField0.placeholder = "Please Input Calories"
+        calorieTextField0.borderStyle = .line
+
+                
+        
+        //Tool Bar code
+        let toolBar = UIToolbar();
+        toolBar.sizeToFit();
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([doneButton], animated: false)
+        // set all keyobards to have toolbar
+        calorieTextField0.inputAccessoryView = toolBar;
         
         view.addSubview(friendButton)
         view.addSubview(itemButton)
         view.addSubview(mapButton)
         view.addSubview(progressButton)
         view.addSubview(shopButton)
+        view.addSubview(calorieTextField0);
         
         friendButton.setImage(UIImage(named: "Button"), for: .normal)
         itemButton.setImage(UIImage(named: "Button"), for: .normal)
@@ -89,5 +121,8 @@ class ProgressViewController:UIViewController {
         newViewController.view.backgroundColor = .orange
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+    }
+    @objc func doneClicked(){
+        view.endEditing(true);
     }
 }

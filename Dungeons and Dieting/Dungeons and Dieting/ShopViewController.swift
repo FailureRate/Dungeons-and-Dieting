@@ -128,6 +128,7 @@ class ShopViewController:UIViewController{
         
         text.text = "Hero Sword: 1000g"
     }
+
     
     @IBAction func toFriend() {
         let newViewController = FriendViewController()
@@ -143,6 +144,7 @@ class ShopViewController:UIViewController{
         self.present(newViewController, animated: false, completion: nil)
     }
     
+
     @IBAction func toMap() {
         let newViewController = MapViewController()
         newViewController.view.backgroundColor = .green
@@ -156,4 +158,5 @@ class ShopViewController:UIViewController{
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }
+
 }

@@ -10,15 +10,22 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameplayKit
+import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController , CLLocationManagerDelegate {
+   
+ 
+    
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
     var progressButton: UIButton
     var shopButton: UIButton
+     var mapview: MKMapView
     
     init() {
+        mapview = MKMapView()
         friendButton = UIButton()
         itemButton = UIButton()
         mapButton = UIButton()
@@ -28,6 +35,7 @@ class MapViewController: UIViewController {
     }
 
     required init?(coder aDecoder: NSCoder) {
+        mapview = MKMapView()
         friendButton = UIButton()
         itemButton = UIButton()
         mapButton = UIButton()
@@ -89,4 +97,8 @@ class MapViewController: UIViewController {
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
     }
+    
+    
+
+
 }

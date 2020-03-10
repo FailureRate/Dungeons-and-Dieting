@@ -20,6 +20,7 @@ class ProgressViewController:UIViewController {
     var shopButton: UIButton
     // UI Text Fields
     var calorieTextField0:UITextField;
+    //var calor
     
     init() {
         friendButton = UIButton()

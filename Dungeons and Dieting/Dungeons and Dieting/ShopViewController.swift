@@ -17,26 +17,17 @@ class ShopViewController:UIViewController{
     var itemButton: UIButton
     var mapButton: UIButton
     var progressButton: UIButton
-    var shopButton: UIButton    
-
-    // Shop Items
-    var shopItem1: UIButton
-    var shopItem2: UIButton
-    var shopItem3: UIButton
-    var shopItem4: UIButton
-    var shopItem5: UIButton
-    var shopItem6: UIButton
-    var shopItem7: UIButton
-    var shopItem8: UIButton
+    var shopButton: UIButton
     
-    var shopText1: UILabel
-    var shopText2: UILabel
-    var shopText3: UILabel
-    var shopText4: UILabel
-    var shopText5: UILabel
-    var shopText6: UILabel
-    var shopText7: UILabel
-    var shopText8: UILabel
+    // Shop Items
+    var shopItem1: ShopItem
+    var shopItem2: ShopItem
+    var shopItem3: ShopItem
+    var shopItem4: ShopItem
+    var shopItem5: ShopItem
+    var shopItem6: ShopItem
+    var shopItem7: ShopItem
+    var shopItem8: ShopItem
     
     init() {
         friendButton = UIButton()
@@ -45,23 +36,14 @@ class ShopViewController:UIViewController{
         progressButton = UIButton()
         shopButton = UIButton()
         
-        shopItem1 = UIButton()
-        shopItem2 = UIButton()
-        shopItem3 = UIButton()
-        shopItem4 = UIButton()
-        shopItem5 = UIButton()
-        shopItem6 = UIButton()
-        shopItem7 = UIButton()
-        shopItem8 = UIButton()
-        
-        shopText1 = UILabel()
-        shopText2 = UILabel()
-        shopText3 = UILabel()
-        shopText4 = UILabel()
-        shopText5 = UILabel()
-        shopText6 = UILabel()
-        shopText7 = UILabel()
-        shopText8 = UILabel()
+        shopItem1 = ShopItem()
+        shopItem2 = ShopItem()
+        shopItem3 = ShopItem()
+        shopItem4 = ShopItem()
+        shopItem5 = ShopItem()
+        shopItem6 = ShopItem()
+        shopItem7 = ShopItem()
+        shopItem8 = ShopItem()
         super.init(nibName:nil, bundle: nil)
     }
 
@@ -72,23 +54,14 @@ class ShopViewController:UIViewController{
         progressButton = UIButton()
         shopButton = UIButton()
         
-        shopItem1 = UIButton()
-        shopItem2 = UIButton()
-        shopItem3 = UIButton()
-        shopItem4 = UIButton()
-        shopItem5 = UIButton()
-        shopItem6 = UIButton()
-        shopItem7 = UIButton()
-        shopItem8 = UIButton()
-        
-        shopText1 = UILabel()
-        shopText2 = UILabel()
-        shopText3 = UILabel()
-        shopText4 = UILabel()
-        shopText5 = UILabel()
-        shopText6 = UILabel()
-        shopText7 = UILabel()
-        shopText8 = UILabel()
+        shopItem1 = ShopItem()
+        shopItem2 = ShopItem()
+        shopItem3 = ShopItem()
+        shopItem4 = ShopItem()
+        shopItem5 = ShopItem()
+        shopItem6 = ShopItem()
+        shopItem7 = ShopItem()
+        shopItem8 = ShopItem()
         super.init(coder: aDecoder)
         }
     
@@ -117,60 +90,32 @@ class ShopViewController:UIViewController{
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         
-        shopItem1 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 200, width: 100, height: 100))
-        shopItem2 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 100, width: 100, height: 100))
-        shopItem3 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY, width: 100, height: 100))
-        shopItem4 = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY + 100, width: 100, height: 100))
-        shopItem5 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY - 200, width: 100, height: 100))
-        shopItem6 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY - 100, width: 100, height: 100))
-        shopItem7 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY, width: 100, height: 100))
-        shopItem8 = UIButton(frame: CGRect (x: view.bounds.midX, y: view.bounds.midY + 100, width: 100, height: 100))
+        shopItem1.Info(name: "Baseaxe", price: 100, position: 1, view: view)
+        shopItem2.Info(name: "Baseaxe", price: 100, position: 2, view: view)
+        shopItem3.Info(name: "Baseaxe", price: 100, position: 3, view: view)
+        shopItem4.Info(name: "Baseaxe", price: 100, position: 4, view: view)
+        shopItem5.Info(name: "Baseaxe", price: 100, position: 5, view: view)
+        shopItem6.Info(name: "Baseaxe", price: 100, position: 6, view: view)
+        shopItem7.Info(name: "Baseaxe", price: 100, position: 7, view: view)
+        shopItem8.Info(name: "Baseaxe", price: 100, position: 8, view: view)
         
-        view.addSubview(shopItem1)
-        view.addSubview(shopItem2)
-        view.addSubview(shopItem3)
-        view.addSubview(shopItem4)
-        view.addSubview(shopItem5)
-        view.addSubview(shopItem6)
-        view.addSubview(shopItem7)
-        view.addSubview(shopItem8)
-        
-        shopItem1.setImage(UIImage(named: "herosword"), for: .normal)
-        shopItem2.setImage(UIImage(named: "herosword"), for: .normal)
-        shopItem3.setImage(UIImage(named: "herosword"), for: .normal)
-        shopItem4.setImage(UIImage(named: "herosword"), for: .normal)
-        shopItem5.setImage(UIImage(named: "herosword"), for: .normal)
-        shopItem6.setImage(UIImage(named: "herosword"), for: .normal)
-        shopItem7.setImage(UIImage(named: "herosword"), for: .normal)
-        shopItem8.setImage(UIImage(named: "herosword"), for: .normal)
-        
-        shopText1 = UILabel(frame: CGRect (x: view.bounds.midX - 100, y: view.bounds.midY - 200, width: 100, height: 100))
-        shopText2 = UILabel(frame: CGRect (x: view.bounds.midX - 100, y: view.bounds.midY - 100, width: 100, height: 100))
-        shopText3 = UILabel(frame: CGRect (x: view.bounds.midX - 100, y: view.bounds.midY, width: 100, height: 100))
-        shopText4 = UILabel(frame: CGRect (x: view.bounds.midX - 100, y: view.bounds.midY + 100, width: 100, height: 100))
-        shopText5 = UILabel(frame: CGRect (x: view.bounds.midX + 100, y: view.bounds.midY - 200, width: 100, height: 100))
-        shopText6 = UILabel(frame: CGRect (x: view.bounds.midX + 100, y: view.bounds.midY - 100, width: 100, height: 100))
-        shopText7 = UILabel(frame: CGRect (x: view.bounds.midX + 100, y: view.bounds.midY, width: 100, height: 100))
-        shopText8 = UILabel(frame: CGRect (x: view.bounds.midX + 100, y: view.bounds.midY + 100, width: 100, height: 100))
-        
-        view.addSubview(shopText1)
-        view.addSubview(shopText2)
-        view.addSubview(shopText3)
-        view.addSubview(shopText4)
-        view.addSubview(shopText5)
-        view.addSubview(shopText6)
-        view.addSubview(shopText7)
-        view.addSubview(shopText8)
-        
-        shopText1.text = "Hero Sword: 1000g"
-        shopText2.text = "Hero Sword: 1000g"
-        shopText3.text = "Hero Sword: 1000g"
-        shopText4.text = "Hero Sword: 1000g"
-        shopText5.text = "Hero Sword: 1000g"
-        shopText6.text = "Hero Sword: 1000g"
-        shopText7.text = "Hero Sword: 1000g"
-        shopText8.text = "Hero Sword: 1000g"
-    }
+        view.addSubview(shopItem1.Button)
+        view.addSubview(shopItem1.Label)
+        view.addSubview(shopItem2.Button)
+        view.addSubview(shopItem2.Label)
+        view.addSubview(shopItem3.Button)
+        view.addSubview(shopItem3.Label)
+        view.addSubview(shopItem4.Button)
+        view.addSubview(shopItem4.Label)
+        view.addSubview(shopItem5.Button)
+        view.addSubview(shopItem5.Label)
+        view.addSubview(shopItem6.Button)
+        view.addSubview(shopItem6.Label)
+        view.addSubview(shopItem7.Button)
+        view.addSubview(shopItem7.Label)
+        view.addSubview(shopItem8.Button)
+        view.addSubview(shopItem8.Label)
+}
         
     @IBAction func toFriend() {
         let newViewController = FriendViewController()

@@ -36,7 +36,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         view.addSubview(playButton)
         playButton.setImage(UIImage(named: "Button"), for: .normal)
-        playButton.addTarget(self, action: #selector(toQuestion), for: .touchUpInside)
+        playButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
            
         
         playButton.translatesAutoresizingMaskIntoConstraints = false

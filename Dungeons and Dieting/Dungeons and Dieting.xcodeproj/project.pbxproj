@@ -28,7 +28,6 @@
 		0D9D28D923E8A9E200110705 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D023E8A9E100110705 /* GoogleDataTransport.framework */; };
 		0D9D28DA23E8A9E200110705 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */; };
 		0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */; };
-		521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		5268F6CA240B34890019B54B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268F6C9240B34890019B54B /* SettingViewController.swift */; };
 		52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		9A29FF5A2405D80300100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };
@@ -123,7 +122,6 @@
 				0D9D28C723E8A66500110705 /* libsqlite3.tbd in Frameworks */,
 				52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */,
 				0D9D28D923E8A9E200110705 /* GoogleDataTransport.framework in Frameworks */,
-				521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */,
 				0D9D28D723E8A9E200110705 /* FirebaseCore.framework in Frameworks */,
 				0D9D28D823E8A9E200110705 /* FIRAnalyticsConnector.framework in Frameworks */,
 				0D8C1AF4241835A500DDC661 /* MapKit.framework in Frameworks */,
@@ -309,7 +307,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = ThreePlayerProductions;
 				TargetAttributes = {
 					9D26A9DE23D7982F00836B7D = {

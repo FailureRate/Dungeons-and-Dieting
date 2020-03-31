@@ -14,25 +14,28 @@ import GameplayKit
 
 class InventoryViewController:UIViewController
 {
+    //buttons
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
     var progressButton: UIButton
     var shopButton: UIButton
-    
+
+    //text
     var HealthPtext:UILabel
       var Leveltext:UILabel
     var CurWtext:UILabel
     var PlayNamtext:UILabel
     
-    
+   // Player backgrund UIimage
     var PlayerUIimage: UIImage
     var PlayerUIViewer: UIImageView
     
-    
+    //DailyQuest UIimage
     var DailyQuestUIimage: UIImage
     var DailyQuestUIViewer: UIImageView
     
+    //InventoryUIimage
     var inventoryUIimage: UIImage
     var inventoryUIimage2: UIImage
     var inventoryUIimage3: UIImage
@@ -56,7 +59,7 @@ class InventoryViewController:UIViewController
     
     
     
-    
+        //InventoryUIimage
     var inventoryUIViewer: UIImageView
     var inventoryUIViewer2: UIImageView
     var inventoryUIViewer3: UIImageView
@@ -201,25 +204,67 @@ class InventoryViewController:UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let framelable :CGRect = CGRect(x:10,y:50,width: UIScreen.main.bounds.width - 40 , height: 100)
-          let framelable2 :CGRect = CGRect(x:10,y:10,width: UIScreen.main.bounds.width - 45 , height: 150)
-          let framelable3 :CGRect = CGRect(x:50,y:20,width: UIScreen.main.bounds.width - 60 , height: 190)
-          let framelable4 :CGRect = CGRect(x:20,y:40,width: UIScreen.main.bounds.width - 90 , height: 200)
-          let framelable5 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-          let framelable6 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-              
-        let framelable7 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-              
-        let framelable8 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
+       
+
+            let LastWlable :CGRect = CGRect(x:90,y:280,width: UIScreen.main.bounds.width - 90 , height: 100)
+            LastWtext =  UILabel(frame: LastWlable)
+            LastWtext.text = "last Cal"
+            LastWtext.font = LastWtext.font.withSize(20)
         
-        PlayerUIimage = UIImage(named: "boxSelect")!
+            let CurWlable2 :CGRect = CGRect(x:90,y:280,width: UIScreen.main.bounds.width - 90 , height: 150)
+            CurWtext  =  UILabel(frame: CurWlable2)
+            CurWtext.text = " cur cal"
+            CurWtext.font =  CurWtext.font.withSize(20)
+          
+            let PlayNamlable3 :CGRect = CGRect(x:90,y:20,width: UIScreen.main.bounds.width - 90 , height: 190)
+            PlayNamtext =  UILabel(frame: PlayNamlable3)
+            PlayNamtext.text = "name"
+            PlayNamtext.font =  PlayNamtext.font.withSize(20)
+          
+            let HealthPlable4 :CGRect = CGRect(x:90,y:200,width: UIScreen.main.bounds.width - 90 , height: 200)
+            HealthPtext =  UILabel(frame: HealthPlable4)
+            HealthPtext.text  = "health"
+            HealthPtext.font =    HealthPtext.font.withSize(20)
+            
+             let Levellable5 :CGRect = CGRect(x:90,y:180,width: UIScreen.main.bounds.width - 90 , height: 200)
+            Leveltext  =  UILabel(frame: Levellable5)
+            Leveltext.text = "Level"
+            CurWtext.font =  CurWtext.font.withSize(20)
+            
+            let equippedlable6 :CGRect = CGRect(x:310,y:40,width: UIScreen.main.bounds.width - 90 , height: 200)
+            equippedtext = UILabel(frame: equippedlable6)
+            equippedtext.text = "Equipment"
+            equippedtext.font =  equippedtext.font.withSize(20)
+            
+            let daliyquestlable7 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 90 , height: 200)
+            daliyquesttext = UILabel(frame: daliyquestlable7)
+            daliyquesttext.text = "Daily Quest"
+            daliyquesttext.font =   daliyquesttext.font.withSize(20)
+          
+            let framelable8 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 00 , height: 200)
+            Inventorytext = UILabel(frame: framelable8)
+            Inventorytext.text = "Inventory"
+            Inventorytext.font =   Inventorytext.font.withSize(20)
+            
+            
+            self.view.addSubview(LastWtext)
+            self.view.addSubview(CurWtext)
+            self.view.addSubview(PlayNamtext)
+            self.view.addSubview(HealthPtext)
+            self.view.addSubview(Leveltext)
+            self.view.addSubview(equippedtext)
+            self.view.addSubview(daliyquesttext)
+            self.view.addSubview(Inventorytext)
+        
+        
+         PlayerUIimage = UIImage(named: "boxSelect")!
          PlayerUIViewer = UIImageView(image: PlayerUIimage)
          PlayerUIViewer.frame = CGRect(x: 50, y: 120, width: 150, height: 150)
-          view.addSubview( PlayerUIViewer)
+         view.addSubview( PlayerUIViewer)
         
         DailyQuestUIimage = UIImage(named: "boxSelect")!
         DailyQuestUIViewer = UIImageView(image: DailyQuestUIimage)
-        DailyQuestUIViewer.frame = CGRect(x: 80, y: 300, width: 250, height: 150)
+        DailyQuestUIViewer.frame = CGRect(x: 80, y: 360, width: 250, height: 150)
         view.addSubview(DailyQuestUIViewer)
 
         inventoryUIimage = UIImage(named: "boxSelect")!
@@ -242,49 +287,49 @@ class InventoryViewController:UIViewController
         inventoryUIimage18 = UIImage(named: "boxSelect")!
                            
         
-      inventoryUIViewer = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer2 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer3 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer4 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer5 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer6 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer7 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer8 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer9 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer2 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer3 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer4 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer5 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer6 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer7 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer8 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer9 = UIImageView(image: inventoryUIimage)
      
-      inventoryUIViewer11 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer12 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer13 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer14 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer15 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer16 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer17 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer18 = UIImageView(image: inventoryUIimage)
-      inventoryUIViewer19 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer11 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer12 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer13 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer14 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer15 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer16 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer17 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer18 = UIImageView(image: inventoryUIimage)
+        inventoryUIViewer19 = UIImageView(image: inventoryUIimage)
      
         
-        inventoryUIViewer.frame = CGRect(x: 50, y: 500, width: 60, height: 60)
-         inventoryUIViewer2.frame = CGRect(x: 100, y: 500, width: 60, height: 60)
-         inventoryUIViewer3.frame = CGRect(x: 150, y: 500, width: 60, height: 60)
-         inventoryUIViewer4.frame = CGRect(x: 200, y: 500, width: 60, height: 60)
-         inventoryUIViewer5.frame = CGRect(x: 250, y: 500, width: 60, height: 60)
-         inventoryUIViewer6.frame = CGRect(x: 300, y: 500, width: 60, height: 60)
+        inventoryUIViewer.frame = CGRect(x: 50, y: 550, width: 60, height: 60)
+        inventoryUIViewer2.frame = CGRect(x: 100, y: 550, width: 60, height: 60)
+        inventoryUIViewer3.frame = CGRect(x: 150, y: 550, width: 60, height: 60)
+        inventoryUIViewer4.frame = CGRect(x: 200, y: 550, width: 60, height: 60)
+        inventoryUIViewer5.frame = CGRect(x: 250, y: 550, width: 60, height: 60)
+        inventoryUIViewer6.frame = CGRect(x: 300, y: 550, width: 60, height: 60)
        
-        inventoryUIViewer7.frame = CGRect(x: 50, y: 550, width: 60, height: 60)
-        inventoryUIViewer8.frame = CGRect(x: 100, y: 550, width: 60, height: 60)
-        inventoryUIViewer9.frame = CGRect(x: 150, y: 550, width: 60, height: 60)
-         inventoryUIViewer10.frame = CGRect(x:200, y: 550, width: 60, height: 60)
-        inventoryUIViewer11.frame = CGRect(x: 200, y: 550, width: 60, height: 60)
-        inventoryUIViewer12.frame = CGRect(x: 250, y: 550, width: 60, height: 60)
-        inventoryUIViewer13.frame = CGRect(x: 300, y: 550, width: 60, height: 60)
+        inventoryUIViewer7.frame = CGRect(x: 50, y: 600, width: 60, height: 60)
+        inventoryUIViewer8.frame = CGRect(x: 100, y: 600, width: 60, height: 60)
+        inventoryUIViewer9.frame = CGRect(x: 150, y: 600, width: 60, height: 60)
+         inventoryUIViewer10.frame = CGRect(x:200, y: 600, width: 60, height: 60)
+        inventoryUIViewer11.frame = CGRect(x: 200, y: 600, width: 60, height: 60)
+        inventoryUIViewer12.frame = CGRect(x: 250, y: 600, width: 60, height: 60)
+        inventoryUIViewer13.frame = CGRect(x: 300, y: 600, width: 60, height: 60)
      
-        inventoryUIViewer14.frame = CGRect(x: 50, y: 600, width: 60, height: 60)
-      inventoryUIViewer15.frame = CGRect(x: 100, y: 600, width: 60, height: 60)
-      inventoryUIViewer16.frame = CGRect(x: 150, y: 600, width: 60, height: 60)
-      inventoryUIViewer17.frame = CGRect(x: 200, y: 600, width: 60, height: 60)
-      inventoryUIViewer18.frame = CGRect(x: 250, y: 600, width: 60, height: 60)
-      inventoryUIViewer19.frame = CGRect(x: 300, y: 600, width: 60, height: 60)
-        
+        inventoryUIViewer14.frame = CGRect(x: 50, y: 650, width: 60, height: 60)
+        inventoryUIViewer15.frame = CGRect(x: 100, y: 650, width: 60, height: 60)
+        inventoryUIViewer16.frame = CGRect(x: 150, y: 650, width: 60, height: 60)
+        inventoryUIViewer17.frame = CGRect(x: 200, y: 650, width: 60, height: 60)
+        inventoryUIViewer18.frame = CGRect(x: 250, y: 650, width: 60, height: 60)
+        inventoryUIViewer19.frame = CGRect(x: 300, y: 650, width: 60, height: 60)
+            
   
         self.view.addSubview(inventoryUIViewer)
         self.view.addSubview(inventoryUIViewer2)
@@ -333,41 +378,7 @@ class InventoryViewController:UIViewController
         
      
                          
-        
-        LastWtext =  UILabel(frame: framelable)
-        LastWtext.text = "last Cal"
-      
-        CurWtext  =  UILabel(frame: framelable2)
-        CurWtext.text = " cur cal"
-       
-        PlayNamtext =  UILabel(frame: framelable3)
-        PlayNamtext.text = "name"
-        
-       HealthPtext =  UILabel(frame: framelable4)
-        HealthPtext.text  = "health"
-        
-        Leveltext  =  UILabel(frame: framelable5)
-        Leveltext.text = "Level"
-        
-        equippedtext = UILabel(frame: framelable6)
-        equippedtext.text = "Equipment"
-        
-        daliyquesttext = UILabel(frame: framelable7)
-        daliyquesttext.text = "Daily Quest"
-       
-        Inventorytext = UILabel(frame: framelable8)
-        Inventorytext.text = "Inventory"
-        
-        
-        
-        self.view.addSubview(LastWtext)
-        self.view.addSubview(CurWtext)
-        self.view.addSubview(PlayNamtext)
-        self.view.addSubview(HealthPtext)
-        self.view.addSubview(Leveltext)
-        self.view.addSubview(equippedtext)
-        self.view.addSubview(daliyquesttext)
-        self.view.addSubview(Inventorytext)
+    
         
         friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))

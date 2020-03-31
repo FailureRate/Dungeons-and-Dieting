@@ -53,7 +53,12 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         self.present(mapViewController, animated: false, completion: nil)
     }
 
-    
+    @IBAction func toQuestion() {
+        let QuestionController = QuestionViewController()
+        QuestionController .view.backgroundColor = .purple
+        QuestionController .modalPresentationStyle = .fullScreen
+        self.present(QuestionController, animated: false, completion: nil)
+    }
 
   
     

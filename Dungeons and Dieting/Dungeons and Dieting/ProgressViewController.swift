@@ -20,6 +20,14 @@ class ProgressViewController:UIViewController {
     var shopButton: UIButton
     // UI Text Fields
     var calorieTextField0:UITextField;
+    var calorieTextField1:UITextField;
+    var calorieTextField2:UITextField;
+    var calorieTextField3:UITextField;
+    //var text
+    //var breakfast:UILabel
+    //var lunch:UILabel
+    //var dinner:UILabel
+    //var snack:UILabel
     
     init() {
         friendButton = UIButton()
@@ -28,6 +36,10 @@ class ProgressViewController:UIViewController {
         progressButton = UIButton()
         shopButton = UIButton()
         calorieTextField0 = UITextField()
+        calorieTextField1 = UITextField()
+        calorieTextField2 = UITextField()
+        calorieTextField3 = UITextField()
+
         super.init(nibName:nil, bundle: nil)
 
     }
@@ -39,6 +51,9 @@ class ProgressViewController:UIViewController {
         progressButton = UIButton()
         shopButton = UIButton()
         calorieTextField0 = UITextField()
+        calorieTextField1 = UITextField()
+        calorieTextField2 = UITextField()
+        calorieTextField3 = UITextField()
         super.init(coder: aDecoder)
     }
     
@@ -50,8 +65,19 @@ class ProgressViewController:UIViewController {
         progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         calorieTextField0 =  UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
-        calorieTextField0.center = self.view.center;
+        calorieTextField1 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
+        calorieTextField2 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
+        calorieTextField3 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
+        
+        calorieTextField0.center = CGPoint(x: self.view.center.x,y: self.view.center.y + 100)
+        calorieTextField1.center = CGPoint(x: self.view.center.x,y: self.view.center.y)
+        calorieTextField2.center = CGPoint(x: self.view.center.x,y: self.view.center.y - 100)
+        calorieTextField3.center = CGPoint(x: self.view.center.x,y: self.view.center.y - 200)
+        
         calorieTextField0.backgroundColor = .white;
+        calorieTextField1.backgroundColor = .white;
+        calorieTextField2.backgroundColor = .white;
+        calorieTextField3.backgroundColor = .white;
         guard let customFont = UIFont(name: "ComicSansMS" , size: 20) else {
         fatalError("""
             Failed to load the "Comic Sans MS" font.
@@ -60,11 +86,25 @@ class ProgressViewController:UIViewController {
             )
         }
         calorieTextField0.font = UIFontMetrics.default.scaledFont(for: customFont)
-            
+         calorieTextField1.font = UIFontMetrics.default.scaledFont(for: customFont)
+         calorieTextField2.font = UIFontMetrics.default.scaledFont(for: customFont)
+         calorieTextField3.font = UIFontMetrics.default.scaledFont(for: customFont)
+        
         calorieTextField0.keyboardType = .numberPad;
         calorieTextField0.placeholder = "Please Input Calories"
         calorieTextField0.borderStyle = .line
-
+        
+        calorieTextField1.keyboardType = .numberPad;
+        calorieTextField1.placeholder = "Please Input Calories"
+        calorieTextField1.borderStyle = .line
+        
+        calorieTextField2.keyboardType = .numberPad;
+        calorieTextField2.placeholder = "Please Input Calories"
+        calorieTextField2.borderStyle = .line
+        
+        calorieTextField3.keyboardType = .numberPad;
+        calorieTextField3.placeholder = "Please Input Calories"
+        calorieTextField3.borderStyle = .line
                 
         
         //Tool Bar code
@@ -75,6 +115,9 @@ class ProgressViewController:UIViewController {
         toolBar.setItems([doneButton], animated: false)
         // set all keyobards to have toolbar
         calorieTextField0.inputAccessoryView = toolBar;
+        calorieTextField1.inputAccessoryView = toolBar;
+        calorieTextField2.inputAccessoryView = toolBar;
+        calorieTextField3.inputAccessoryView = toolBar;
         
         view.addSubview(friendButton)
         view.addSubview(itemButton)
@@ -82,6 +125,9 @@ class ProgressViewController:UIViewController {
         view.addSubview(progressButton)
         view.addSubview(shopButton)
         view.addSubview(calorieTextField0);
+        view.addSubview(calorieTextField1);
+        view.addSubview(calorieTextField2);
+        view.addSubview(calorieTextField3);
         
         friendButton.setImage(UIImage(named: "Button"), for: .normal)
         itemButton.setImage(UIImage(named: "Button"), for: .normal)

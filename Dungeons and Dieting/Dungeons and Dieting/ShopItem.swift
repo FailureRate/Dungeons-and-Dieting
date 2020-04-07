@@ -11,21 +11,19 @@ import UIKit
 import SpriteKit
 
 class ShopItem {
-    var Name: String
-    var Price: Int
-    
+    var Info: Item
     var Button: UIButton
     var Label: UILabel
     
     init() {
-        Name = String()
-        Price = Int()
-        
+        Info = Item()
         Button = UIButton()
         Label = UILabel()
     }
     
-    func Info(name: String, price: Int, position: Int, view: UIView) -> Void {
+    func SetUpShopItem(name: String, price: Int, position: Int, view: UIView) -> Void {
+        Info.SetUpItem(itemname: name, itemimage: UIImage(named: name)!, itemprice: price)
+        
         switch position {
         case 1:
             Button = UIButton(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 200, width: 100, height: 100))
@@ -64,8 +62,10 @@ class ShopItem {
             
         }
         
-        Button.setImage(UIImage(named: name), for: .normal)
-        Label.text = String(price) + "G"
+        Button.setImage(Info.Image, for: .normal)
+        Label.text = String(Info.Price)
+        Button.addTarget(self, action: #selector(BuyItem), for: .touchUpInside)
+        
     }
     
     @IBAction func BuyItem() {

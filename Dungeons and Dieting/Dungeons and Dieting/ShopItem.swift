@@ -64,6 +64,8 @@ class ShopItem {
         
         Button.setImage(Info.Image, for: .normal)
         Label.text = String(Info.Price)
+        Button.addTarget(self, action: #selector(BuyItem), for: .touchUpInside)
+        
     }
     
     @IBAction func BuyItem() {

@@ -10,14 +10,22 @@ import Foundation
 import UIKit
 import SpriteKit
 
+enum ItemType {
+    case none, key, consumable, equipment
+}
+
 class Item {
     var Name: String
     var Image: UIImage
+    var IType: ItemType
+    var Stats: Array<Int>
     var Price: Int
     
     init() {
         Name = String()
         Image = UIImage()
+        IType = ItemType.none
+        Stats = Array<Int>()
         Price = Int()
     }
     

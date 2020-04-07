@@ -22,17 +22,18 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
     var mapButton: UIButton
     var progressButton: UIButton
     var shopButton: UIButton
+    var textaddress: UITextField!
 
-    
     
     
     //map info
     var mapview: MKMapView
+   
+    var getDirectionButton: UIButton
     let LocationM = CLLocationManager()
-    var previousLoc: CLLocation?
     let Clientid = "WP0KU1PZ5EZELDOTL2MVVWEK0Y4PSU45TMHLHUCV4QFBK4OI"
     let CLIENTSECRET = "FJJPDA5ANL3JCXAUALOMXKLWJYKSUY1PTZXESPGYO04RA1RK"
-   var addressLabel: UILabel!
+    
 
     
     
@@ -64,10 +65,10 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         randomLoc6 =  Double.random(in:0...00.5)
         randomLoc7 =  Double.random(in:0...00.5)
         randomLoc8 =  Double.random(in:0...00.5)
+         
+        textaddress = UITextField()
+        getDirectionButton = UIButton()
         
-       
-
-        addressLabel = UILabel()
         mapview = MKMapView()
         friendButton = UIButton()
         itemButton = UIButton()
@@ -78,14 +79,14 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
     }
 
     required init?(coder aDecoder: NSCoder) {
-      
-   
+    
         mapview = MKMapView()
         friendButton = UIButton()
         itemButton = UIButton()
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        getDirectionButton = UIButton()
         
         //randmon location for monsters
         randomLoc =   0.004065
@@ -101,6 +102,19 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let toolBar = UIToolbar();
+        toolBar.sizeToFit();
+        textaddress  = UITextField(frame: CGRect(x:0, y:650, width: 400,height:50))
+        textaddress.backgroundColor = .white
+        textaddress.placeholder = "Please Input Place you want to go "
+        textaddress.borderStyle = .line
+        textaddress.inputAccessoryView = toolBar;
+        view.addSubview(textaddress );
+        getDirectionButton =  UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 150, height: 150))
+        
+        
+        
         friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
@@ -108,8 +122,10 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         
 
-       
-        view.addSubview(addressLabel)
+  
+        view.addSubview(textaddress)
+        view.addSubview(getDirectionButton)
+        
         
         
         view.addSubview(friendButton)
@@ -117,6 +133,9 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         view.addSubview(mapButton)
         view.addSubview(progressButton)
         view.addSubview(shopButton)
+        
+        getDirectionButton.setImage(UIImage(named: "Button"), for: .normal)
+        
         
         friendButton.setImage(UIImage(named: "Button"), for: .normal)
         itemButton.setImage(UIImage(named: "Button"), for: .normal)
@@ -184,12 +203,14 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
       
          }
      }
+    
     // sets up Loation Manger
      func setupLoation()
-           {  LocationM.delegate = self
-              LocationM.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    {
+        LocationM.delegate = self
+        LocationM.desiredAccuracy = kCLLocationAccuracyHundredMeters
               
-           }
+    }
     
     //check user location Authorization
     func checkLocationAuthorization() {
@@ -215,18 +236,12 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         
     }
     
-    
-
-    
     ///track user location
     func TrackUser()
     {
         mapview.showsUserLocation = true;
         centerviewuserlocation()
         LocationM.startUpdatingLocation()
-        previousLoc = getCenterLocation(for: mapview)
-        
-        
     }
     
     //set map foucus on this region
@@ -249,50 +264,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         
     }
     
- func getCenterLocation(for mapView: MKMapView) -> CLLocation {
-        let latitude = mapView.centerCoordinate.latitude
-        let longitude = mapView.centerCoordinate.longitude
-        
-        return CLLocation(latitude: latitude, longitude: longitude)
-    }
-    
-    
-   func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-       let center = getCenterLocation(for: mapView)
-       let geoCoder = CLGeocoder()
-       
-       guard let previousLoc = self.previousLoc else { return }
-       
-       guard center.distance(from: previousLoc) > 50 else { return }
-       self.previousLoc = center
-       
-       geoCoder.reverseGeocodeLocation(center) { [weak self] (placemarks, error) in
-           guard let self = self else { return }
-           
-           if let _ = error {
-               //TODO: Show alert informing the user
-               return
-           }
-           
-           guard let placemark = placemarks?.first else {
-               //TODO: Show alert informing the user
-               return
-           }
-           
-           let streetNumber = placemark.subThoroughfare ?? ""
-           let streetName = placemark.thoroughfare ?? ""
-           
-           DispatchQueue.main.async {
-
-            //  addressLabel.text = "hhhhhh"
-            self.addressLabel.textAlignment = .center
-            self.addressLabel.frame = CGRect(x: 0, y: 210, width: 150, height: 50)
-            self.addressLabel.backgroundColor = .lightGray
-            self.addressLabel.text = "\(streetNumber) \(streetName)"
-           }
-       }
-   }
-
        //update location of user
        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
        {
@@ -352,7 +323,8 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
              
                 
                 mapview.setRegion(region, animated: true)
-               }
+              
+            }
            }
            
 
@@ -373,12 +345,71 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
                print(datacheck)
             }
            task.resume()
+    }
+
+    
+    func getDirectionofUser(_sender:Any)
+       {
+           getLocAdress()
+       }
+       
+       
+       func getLocAdress()
+       {
+           let geocoder = CLGeocoder()
+           geocoder.geocodeAddressString(textaddress.text!) { (placemarks, error) in
+               guard let placemarks = placemarks, let location = placemarks.first?.location
+                   else {
+                       print("No Location Found")
+                       return
+               }
+               print(location)
+               self.mapUserDestination(destinationCord: location.coordinate)
+           }
+       }
+       
+       
+        func mapUserDestination(destinationCord : CLLocationCoordinate2D) {
+           
+           let souceCordinate = (LocationM.location?.coordinate)!
+           
+           let soucePlaceMark = MKPlacemark(coordinate: souceCordinate)
+           let destinationPlaceMark = MKPlacemark(coordinate: destinationCord)
+           
+           let sourceItem = MKMapItem(placemark: soucePlaceMark)
+           let destItem = MKMapItem(placemark:  destinationPlaceMark)
+           
+           let destinationRequest = MKDirections.Request()
+           destinationRequest.source = sourceItem
+           destinationRequest.destination = destItem
+           destinationRequest.transportType = .walking
+           destinationRequest.requestsAlternateRoutes = true
+           
+           let directions = MKDirections(request: destinationRequest)
+           directions.calculate { (response, error) in
+               guard let response = response else {
+                   if let error = error{
+                       print("Something is wrong :(")
+                   }
+                   return
+               }
+               
+            let route = response.routes[0]
+            self.mapview.addOverlay(route.polyline)
+            self.mapview.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+           }
            
            
        }
-
-    
-    
+       
+       
+       ///creates blue line which show user direction
+          func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+           let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+           render.strokeColor = .blue
+           return render
+       }
+       
     
   
        ///checks to see if location falied
@@ -392,7 +423,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
     {
      checkLocationAuthorization()
     }
-
     
     
       ///checks to see MKPointAnnotation identifed

@@ -13,169 +13,150 @@ import GameplayKit
 
 class ShopViewController:UIViewController{
    
-     var friendButton: UIButton
-        var itemButton: UIButton
-        var mapButton: UIButton
-        var progressButton: UIButton
-        var shopButton: UIButton
-        
-        var HealthPtext:UILabel
-          var Leveltext:UILabel
-        var CurWtext:UILabel
-        var PlayNamtext:UILabel
-        
+    var friendButton: UIButton
+    var itemButton: UIButton
+    var mapButton: UIButton
+    var progressButton: UIButton
+    var shopButton: UIButton
     
+    // Player Money
+    var money: UILabel
+    
+    // Shop Items
+    var shopItem1: ShopItem
+    var shopItem2: ShopItem
+    var shopItem3: ShopItem
+    var shopItem4: ShopItem
+    var shopItem5: ShopItem
+    var shopItem6: ShopItem
+    var shopItem7: ShopItem
+    var shopItem8: ShopItem
+    
+    init() {
+        friendButton = UIButton()
+        itemButton = UIButton()
+        mapButton = UIButton()
+        progressButton = UIButton()
+        shopButton = UIButton()
+        
+        money = UILabel()
+        
+        shopItem1 = ShopItem()
+        shopItem2 = ShopItem()
+        shopItem3 = ShopItem()
+        shopItem4 = ShopItem()
+        shopItem5 = ShopItem()
+        shopItem6 = ShopItem()
+        shopItem7 = ShopItem()
+        shopItem8 = ShopItem()
+        super.init(nibName:nil, bundle: nil)
+    }
 
-        var equippedtext:UILabel
-        var daliyquesttext:UILabel
-        var Inventorytext:UILabel
+    required init?(coder aDecoder: NSCoder) {
+        friendButton = UIButton()
+        itemButton = UIButton()
+        mapButton = UIButton()
+        progressButton = UIButton()
+        shopButton = UIButton()
+        
+        money = UILabel()
+        
+        shopItem1 = ShopItem()
+        shopItem2 = ShopItem()
+        shopItem3 = ShopItem()
+        shopItem4 = ShopItem()
+        shopItem5 = ShopItem()
+        shopItem6 = ShopItem()
+        shopItem7 = ShopItem()
+        shopItem8 = ShopItem()
+        super.init(coder: aDecoder)
+        }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()        
+        friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
+        itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))
+        mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
+        progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
+        shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
 
-        let level:Int
-        let Cweight:Int
-        let lastwe:Int
+        view.addSubview(friendButton)
+        view.addSubview(itemButton)
+        view.addSubview(mapButton)
+        view.addSubview(progressButton)
+        view.addSubview(shopButton)
         
-        var LastWtext:UILabel!
-
-
-        init() {
-            HealthPtext = UILabel()
-            Leveltext = UILabel()
-            CurWtext = UILabel()
-            equippedtext = UILabel()
-            daliyquesttext = UILabel()
-            Inventorytext = UILabel()
-             PlayNamtext = UILabel()
-      
-            
-            level = 0
-            Cweight = 0
-            lastwe = 0
-            
-            friendButton = UIButton()
-            itemButton = UIButton()
-            mapButton = UIButton()
-            progressButton = UIButton()
-            shopButton = UIButton()
-            super.init(nibName:nil, bundle: nil)
-        }
+        friendButton.setImage(UIImage(named: "Button"), for: .normal)
+        itemButton.setImage(UIImage(named: "Button"), for: .normal)
+        mapButton.setImage(UIImage(named: "Button"), for: .normal)
+        progressButton.setImage(UIImage(named: "Button"), for: .normal)
+        shopButton.setImage(UIImage(named: "Button"), for: .normal)
         
+        friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
+        itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
+        mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
+        progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         
-        required init?(coder: NSCoder) {
-            friendButton = UIButton()
-            itemButton = UIButton()
-            mapButton = UIButton()
-            progressButton = UIButton()
-            shopButton = UIButton()
-            fatalError("init(coder:) has not been implemented")
-        }
+        money = UILabel(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 300, width: 100, height: 100))
+        money.text = "0G" // upadte when player class is made
+        view.addSubview(money)
+            
+        shopItem1.SetUpShopItem(name: "Baseaxe", price: 100, position: 1, view: view)
+        shopItem2.SetUpShopItem(name: "Baseaxe", price: 100, position: 2, view: view)
+        shopItem3.SetUpShopItem(name: "Baseaxe", price: 100, position: 3, view: view)
+        shopItem4.SetUpShopItem(name: "Baseaxe", price: 100, position: 4, view: view)
+        shopItem5.SetUpShopItem(name: "Baseaxe", price: 100, position: 5, view: view)
+        shopItem6.SetUpShopItem(name: "Baseaxe", price: 100, position: 6, view: view)
+        shopItem7.SetUpShopItem(name: "Baseaxe", price: 100, position: 7, view: view)
+        shopItem8.SetUpShopItem(name: "Baseaxe", price: 100, position: 8, view: view)
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            let framelable :CGRect = CGRect(x:10,y:50,width: UIScreen.main.bounds.width - 40 , height: 100)
-              let framelable2 :CGRect = CGRect(x:10,y:10,width: UIScreen.main.bounds.width - 45 , height: 150)
-              let framelable3 :CGRect = CGRect(x:50,y:20,width: UIScreen.main.bounds.width - 60 , height: 190)
-              let framelable4 :CGRect = CGRect(x:20,y:40,width: UIScreen.main.bounds.width - 90 , height: 200)
-              let framelable5 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-              let framelable6 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-                  
-            let framelable7 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-                  
-            let framelable8 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-            
-     
-                               
-            LastWtext =  UILabel(frame: framelable)
-            LastWtext.text = "last Cal"
-          
-            CurWtext  =  UILabel(frame: framelable2)
-            CurWtext.text = " cur cal"
-           
-            PlayNamtext =  UILabel(frame: framelable3)
-            PlayNamtext.text = "name"
-            
-           HealthPtext =  UILabel(frame: framelable4)
-            HealthPtext.text  = "health"
-            
-            Leveltext  =  UILabel(frame: framelable5)
-            Leveltext.text = "Level"
-            
-            equippedtext = UILabel(frame: framelable6)
-            equippedtext.text = "Equipment"
-            
-            daliyquesttext = UILabel(frame: framelable7)
-            daliyquesttext.text = "Daily Quest"
-           
-            Inventorytext = UILabel(frame: framelable8)
-            Inventorytext.text = "Inventory"
-            
-            
-            
-            self.view.addSubview(LastWtext)
-            self.view.addSubview(CurWtext)
-            self.view.addSubview(PlayNamtext)
-            self.view.addSubview(HealthPtext)
-            self.view.addSubview(Leveltext)
-            self.view.addSubview(equippedtext)
-            self.view.addSubview(daliyquesttext)
-            self.view.addSubview(Inventorytext)
-            
-            friendButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 200, y: view.bounds.maxY - 150, width: 50, height: 50))
-            itemButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 - 100, y: view.bounds.maxY - 150, width: 50, height: 50))
-            mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
-            progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
-            shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
-            
-            view.addSubview(friendButton)
-            view.addSubview(itemButton)
-            view.addSubview(mapButton)
-            view.addSubview(progressButton)
-            view.addSubview(shopButton)
-            
-            friendButton.setImage(UIImage(named: "Button"), for: .normal)
-            itemButton.setImage(UIImage(named: "Button"), for: .normal)
-            mapButton.setImage(UIImage(named: "Button"), for: .normal)
-            progressButton.setImage(UIImage(named: "Button"), for: .normal)
-            shopButton.setImage(UIImage(named: "Button"), for: .normal)
-            
-            friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
-            mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
-            progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
-            shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
-        }
+        view.addSubview(shopItem1.Button)
+        view.addSubview(shopItem1.Label)
+        view.addSubview(shopItem2.Button)
+        view.addSubview(shopItem2.Label)
+        view.addSubview(shopItem3.Button)
+        view.addSubview(shopItem3.Label)
+        view.addSubview(shopItem4.Button)
+        view.addSubview(shopItem4.Label)
+        view.addSubview(shopItem5.Button)
+        view.addSubview(shopItem5.Label)
+        view.addSubview(shopItem6.Button)
+        view.addSubview(shopItem6.Label)
+        view.addSubview(shopItem7.Button)
+        view.addSubview(shopItem7.Label)
+        view.addSubview(shopItem8.Button)
+        view.addSubview(shopItem8.Label)
+}
         
-        @IBAction func toFriend() {
-            let newViewController = FriendViewController()
-            newViewController.view.backgroundColor = .blue
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: false, completion: nil)
-        }
+    @IBAction func toFriend() {
+        let newViewController = FriendViewController()
+        newViewController.view.backgroundColor = .blue
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func toItem() {
+        let newViewController = InventoryViewController()
+        newViewController.view.backgroundColor = .red
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
         
-        @IBAction func toMap() {
-            let newViewController = MapViewController()
-            newViewController.view.backgroundColor = .green
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: false, completion: nil)
-        }
+    @IBAction func toMap() {
+        let newViewController = MapViewController()
+        newViewController.view.backgroundColor = .green
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
         
-        @IBAction func toProgress() {
-            let newViewController = ProgressViewController()
-            newViewController.view.backgroundColor = .purple
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: false, completion: nil)
-        }
+    @IBAction func toProgress() {
+        let newViewController = ProgressViewController()
+        newViewController.view.backgroundColor = .purple
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
+    }
         
-        @IBAction func toShop() {
-            let newViewController = ShopViewController()
-            newViewController.view.backgroundColor = .orange
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: false, completion: nil)
-        }
-
-        
-      
-        
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-        }
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }

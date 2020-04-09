@@ -23,6 +23,7 @@ class ProgressViewController:UIViewController {
     var calorieTextField1:UITextField;
     var calorieTextField2:UITextField;
     var calorieTextField3:UITextField;
+    var saveButton:UIButton;
     //var text
     //var breakfast:UILabel
     //var lunch:UILabel
@@ -39,6 +40,7 @@ class ProgressViewController:UIViewController {
         calorieTextField1 = UITextField()
         calorieTextField2 = UITextField()
         calorieTextField3 = UITextField()
+        saveButton = UIButton()
 
         super.init(nibName:nil, bundle: nil)
 
@@ -54,6 +56,7 @@ class ProgressViewController:UIViewController {
         calorieTextField1 = UITextField()
         calorieTextField2 = UITextField()
         calorieTextField3 = UITextField()
+        saveButton = UIButton()
         super.init(coder: aDecoder)
     }
     
@@ -64,7 +67,8 @@ class ProgressViewController:UIViewController {
         mapButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2, y: view.bounds.maxY - 150, width: 50, height: 50))
         progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
-        calorieTextField0 =  UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
+        saveButton = UIButton(frame: CGRect(x: (view.bounds.maxX - 50)/2 + 150, y: view.bounds.maxY - 300, width: 50, height: 50))
+        calorieTextField0 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
         calorieTextField1 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
         calorieTextField2 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
         calorieTextField3 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
@@ -85,6 +89,8 @@ class ProgressViewController:UIViewController {
             """
             )
         }
+        
+     
         calorieTextField0.font = UIFontMetrics.default.scaledFont(for: customFont)
          calorieTextField1.font = UIFontMetrics.default.scaledFont(for: customFont)
          calorieTextField2.font = UIFontMetrics.default.scaledFont(for: customFont)
@@ -105,8 +111,14 @@ class ProgressViewController:UIViewController {
         calorieTextField3.keyboardType = .numberPad;
         calorieTextField3.placeholder = "Please Input Calories"
         calorieTextField3.borderStyle = .line
-                
-        
+        let calories0 = UserDefaults.standard.getValueofCalories()
+        let calories1 = UserDefaults.standard.getValueofCalories1()
+        let calories2 = UserDefaults.standard.getValueofCalories2()
+        let calories3 = UserDefaults.standard.getValueofCalories3()
+        calorieTextField0.text = calories0;
+        calorieTextField1.text = calories1;
+        calorieTextField2.text = calories2;
+        calorieTextField3.text = calories3;
         //Tool Bar code
         let toolBar = UIToolbar();
         toolBar.sizeToFit();
@@ -128,17 +140,20 @@ class ProgressViewController:UIViewController {
         view.addSubview(calorieTextField1);
         view.addSubview(calorieTextField2);
         view.addSubview(calorieTextField3);
+        view.addSubview(saveButton)
         
         friendButton.setImage(UIImage(named: "Button"), for: .normal)
         itemButton.setImage(UIImage(named: "Button"), for: .normal)
         mapButton.setImage(UIImage(named: "Button"), for: .normal)
         progressButton.setImage(UIImage(named: "Button"), for: .normal)
         shopButton.setImage(UIImage(named: "Button"), for: .normal)
+        saveButton.setImage(UIImage(named:"Button"), for: .normal)
         
         friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
         itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(onSaveData), for: .touchUpInside)
     }
     
     @IBAction func toFriend() {
@@ -167,6 +182,14 @@ class ProgressViewController:UIViewController {
         newViewController.view.backgroundColor = .orange
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+    }
+    @IBAction func onSaveData(sender: UISwitch){
+        let calorietest = calorieTextField0.text
+        UserDefaults.standard.setValueForCalories(value: calorietest)
+        UserDefaults.standard.setValueForCalories1(value: calorieTextField1.text)
+        UserDefaults.standard.setValueForCalories2(value: calorieTextField2.text)
+        UserDefaults.standard.setValueForCalories3(value: calorieTextField3.text)
+        
     }
     @objc func doneClicked(){
         view.endEditing(true);

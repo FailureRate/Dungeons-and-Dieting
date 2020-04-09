@@ -69,6 +69,8 @@ class ShopItem {
     }
     
     @IBAction func BuyItem() {
-        
+        if (Player.shared.GetMoney() >=  Info.Price) {
+            Player.shared.AddToInventory(item: Info)
+        }
     }
 }

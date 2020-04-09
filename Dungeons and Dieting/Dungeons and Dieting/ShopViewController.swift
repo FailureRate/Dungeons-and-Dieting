@@ -98,7 +98,7 @@ class ShopViewController:UIViewController{
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         
         money = UILabel(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 300, width: 100, height: 100))
-        money.text = "0G" // upadte when player class is made
+        money.text = String(Player.shared.GetMoney()) + " G"
         view.addSubview(money)
             
         shopItem1.SetUpShopItem(name: "Baseaxe", price: 100, position: 1, view: view)

@@ -19,6 +19,9 @@ class ShopViewController:UIViewController{
     var progressButton: UIButton
     var shopButton: UIButton
     
+    // ShopArrays
+    let equipment = ["Blackbow", "blueShield", "BoneHammer", "bronzesword", "canestaff", "crownshield", "curvesword", "Firebow", "goldshield", "greenShield", "katana", "Rapier"]
+    
     // Player Money
     var money: UILabel
     
@@ -97,18 +100,18 @@ class ShopViewController:UIViewController{
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         
-        money = UILabel(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 300, width: 100, height: 100))
-        money.text = String(Player.shared.GetMoney()) + " G"
+        money = UILabel(frame: CGRect (x: view.bounds.midX - 100, y: view.bounds.midY - 300, width: 100, height: 100))
+        money.text = "Cash: " + String(Player.shared.GetMoney()) + " G"
         view.addSubview(money)
             
-        shopItem1.SetUpShopItem(name: "Baseaxe", price: 100, position: 1, view: view)
-        shopItem2.SetUpShopItem(name: "Baseaxe", price: 100, position: 2, view: view)
-        shopItem3.SetUpShopItem(name: "Baseaxe", price: 100, position: 3, view: view)
-        shopItem4.SetUpShopItem(name: "Baseaxe", price: 100, position: 4, view: view)
-        shopItem5.SetUpShopItem(name: "Baseaxe", price: 100, position: 5, view: view)
-        shopItem6.SetUpShopItem(name: "Baseaxe", price: 100, position: 6, view: view)
-        shopItem7.SetUpShopItem(name: "Baseaxe", price: 100, position: 7, view: view)
-        shopItem8.SetUpShopItem(name: "Baseaxe", price: 100, position: 8, view: view)
+        shopItem1.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 1, view: view)
+        shopItem2.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 2, view: view)
+        shopItem3.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 3, view: view)
+        shopItem4.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 4, view: view)
+        shopItem5.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 5, view: view)
+        shopItem6.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 6, view: view)
+        shopItem7.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 7, view: view)
+        shopItem8.SetUpShopItem(name: equipment.randomElement()!, price: 100, type: ItemType.equipment, position: 8, view: view)
         
         view.addSubview(shopItem1.Button)
         view.addSubview(shopItem1.Label)

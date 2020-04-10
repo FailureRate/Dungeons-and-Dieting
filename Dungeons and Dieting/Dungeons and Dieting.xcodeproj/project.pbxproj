@@ -30,7 +30,6 @@
 		0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */; };
 		263CBC272437F1AF0032BF38 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263CBC262437F1AF0032BF38 /* Item.swift */; };
 		2680E31E243FAB6C00822D16 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2680E31D243FAB6C00822D16 /* Player.swift */; };
-		521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		5268F6CA240B34890019B54B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268F6C9240B34890019B54B /* SettingViewController.swift */; };
 		52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		9A29FF5A2405D80300100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };

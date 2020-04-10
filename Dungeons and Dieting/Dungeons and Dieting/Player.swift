@@ -9,7 +9,7 @@
 import Foundation
 
 final class Player {
-    static let shared = Player();
+    static let shared = Player()
     
     private var Money: Int
     private var Inventory: Array<Item>

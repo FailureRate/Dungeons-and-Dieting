@@ -9,12 +9,13 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 class GameViewController: UIViewController{
 
     // Changed Nothing
     
     var playButton: UIButton
+    var MusicPlayerA = AVAudioPlayer()
         
     init() {
         playButton = UIButton(frame: CGRect (x: 0, y: 0, width: 100, height: 100))
@@ -29,6 +30,17 @@ class GameViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(playButton)
+        
+      //  let backgroundmusic = Bundle.main.path(forResource: "CalmTownTheme", ofType: "mp3")
+        do{
+            MusicPlayerA = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "CalmTownTheme", ofType: "mp3")!))
+            MusicPlayerA.prepareToPlay()
+            
+        }catch
+        {
+            
+            print(error)
+        }
         playButton.setImage(UIImage(named: "Button"), for: .normal)
         playButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
            
@@ -36,7 +48,7 @@ class GameViewController: UIViewController{
         playButton.translatesAutoresizingMaskIntoConstraints = false
         playButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
+        MusicPlayerA.play()
     }
     
     @IBAction func toMap() {

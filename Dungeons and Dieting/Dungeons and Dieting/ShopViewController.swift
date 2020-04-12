@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 class ShopViewController:UIViewController{
-   
+    var Musicclick = AVAudioPlayer()
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
@@ -126,6 +126,15 @@ class ShopViewController:UIViewController{
         view.addSubview(shopItem7.Label)
         view.addSubview(shopItem8.Button)
         view.addSubview(shopItem8.Label)
+        
+        
+        do{
+             Musicclick = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "click", ofType: "wav")!))
+              Musicclick.prepareToPlay()
+              }catch
+             {
+                  print(error)
+             }
 }
         
     @IBAction func toFriend() {
@@ -133,6 +142,7 @@ class ShopViewController:UIViewController{
         newViewController.view.backgroundColor = .blue
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+             Musicclick.play()
     }
     
     @IBAction func toItem() {
@@ -140,6 +150,7 @@ class ShopViewController:UIViewController{
         newViewController.view.backgroundColor = .red
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+             Musicclick.play()
     }
         
     @IBAction func toMap() {
@@ -147,6 +158,7 @@ class ShopViewController:UIViewController{
         newViewController.view.backgroundColor = .green
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+             Musicclick.play()
     }
         
     @IBAction func toProgress() {
@@ -154,6 +166,7 @@ class ShopViewController:UIViewController{
         newViewController.view.backgroundColor = .purple
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+             Musicclick.play()
     }
         
     override func didReceiveMemoryWarning() {

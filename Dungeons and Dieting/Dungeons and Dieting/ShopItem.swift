@@ -21,8 +21,8 @@ class ShopItem {
         Label = UILabel()
     }
     
-    func SetUpShopItem(name: String, price: Int, position: Int, view: UIView) -> Void {
-        Info.SetUpItem(itemname: name, itemimage: UIImage(named: name)!, itemprice: price)
+    func SetUpShopItem(name: String, price: Int, type: ItemType, position: Int, view: UIView) {
+        Info.SetUpItem(name: name, image: UIImage(named: name)!, type: type, price: price)
         
         switch position {
         case 1:
@@ -69,6 +69,8 @@ class ShopItem {
     }
     
     @IBAction func BuyItem() {
-        
+        if (Player.shared.GetMoney() >=  Info.Price) {
+            Player.shared.AddToInventory(item: Info)
+        }
     }
 }

@@ -29,9 +29,10 @@ class Item {
         Price = Int()
     }
     
-    func SetUpItem(itemname: String, itemimage: UIImage, itemprice: Int) {
-        Name = itemname
-        Image = itemimage
-        Price = itemprice
+    func SetUpItem(name: String, image: UIImage, type: ItemType, price: Int) {
+        Name = name
+        Image = image
+        IType = type
+        Price = price
     }
 }

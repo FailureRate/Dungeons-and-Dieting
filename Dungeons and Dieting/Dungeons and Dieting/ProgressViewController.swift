@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 class ProgressViewController:UIViewController {
     var floatbuttonHeightWidth = 50.0;
     // These are all the buttons for the menu

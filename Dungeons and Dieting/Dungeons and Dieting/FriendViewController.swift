@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 class FriendViewController: UIViewController{
+    var Musicclick = AVAudioPlayer()
+    
+    
+    
     var friendButton: UIButton
     var itemButton: UIButton
     var mapButton: UIButton
@@ -169,6 +173,15 @@ class FriendViewController: UIViewController{
         PlayerUIViewer = UIImageView(image: PlayerUIimage)
         PlayerUIViewer.frame = CGRect(x: 60, y: 170, width: 300, height: 300)
         view.addSubview( PlayerUIViewer)
+        
+        do{
+             Musicclick = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "click", ofType: "wav")!))
+              Musicclick.prepareToPlay()
+              }catch
+             {
+                  print(error)
+             }
+        
     }
     
     @IBAction func toItem() {
@@ -176,6 +189,7 @@ class FriendViewController: UIViewController{
         newViewController.view.backgroundColor = .red
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toMap() {
@@ -183,6 +197,7 @@ class FriendViewController: UIViewController{
         newViewController.view.backgroundColor = .green
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toProgress() {
@@ -190,6 +205,7 @@ class FriendViewController: UIViewController{
         newViewController.view.backgroundColor = .purple
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toShop() {
@@ -197,6 +213,7 @@ class FriendViewController: UIViewController{
         newViewController.view.backgroundColor = .orange
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
 }
 

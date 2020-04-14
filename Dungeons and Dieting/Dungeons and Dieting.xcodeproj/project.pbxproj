@@ -29,7 +29,6 @@
 		0D9D28DA23E8A9E200110705 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D28D123E8A9E100110705 /* FirebaseAnalytics.framework */; };
 		0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D28DB23E8AF2200110705 /* GoogleService-Info.plist */; };
 		263CBC272437F1AF0032BF38 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263CBC262437F1AF0032BF38 /* Item.swift */; };
-		521087D22402C74D00AB311B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		5268F6CA240B34890019B54B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268F6C9240B34890019B54B /* SettingViewController.swift */; };
 		52ECEEA623F5129F009553C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ECEEA523F5129F009553C9 /* CoreLocation.framework */; };
 		9A29FF5A2405D80300100222 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9A29FF592405D80300100222 /* Fonts */; };
@@ -48,6 +47,12 @@
 		9D26A9FE23D7983000836B7D /* Dungeons_and_DietingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26A9FD23D7983000836B7D /* Dungeons_and_DietingTests.swift */; };
 		9D26AA0923D7983000836B7D /* Dungeons_and_DietingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26AA0823D7983000836B7D /* Dungeons_and_DietingUITests.swift */; };
 		9DDEC537240EF21D00C06124 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDEC536240EF21D00C06124 /* ShopItem.swift */; };
+		A1F44E4A244377F6008AB264 /* attack_hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1F44E47244377F6008AB264 /* attack_hit.mp3 */; };
+		A1F44E502443780F008AB264 /* CalmTownTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1F44E4C2443780E008AB264 /* CalmTownTheme.mp3 */; };
+		A1F44E512443780F008AB264 /* selectNoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1F44E4D2443780E008AB264 /* selectNoise.wav */; };
+		A1F44E522443780F008AB264 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1F44E4E2443780E008AB264 /* click.wav */; };
+		A1F44E532443780F008AB264 /* Battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1F44E4F2443780F008AB264 /* Battle.mp3 */; };
+		A1F44E5524437C04008AB264 /* Win sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1F44E5424437C04008AB264 /* Win sound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +121,12 @@
 		9D26AA0823D7983000836B7D /* Dungeons_and_DietingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeons_and_DietingUITests.swift; sourceTree = "<group>"; };
 		9D26AA0A23D7983000836B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DDEC536240EF21D00C06124 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
+		A1F44E47244377F6008AB264 /* attack_hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = attack_hit.mp3; sourceTree = "<group>"; };
+		A1F44E4C2443780E008AB264 /* CalmTownTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CalmTownTheme.mp3; sourceTree = "<group>"; };
+		A1F44E4D2443780E008AB264 /* selectNoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = selectNoise.wav; sourceTree = "<group>"; };
+		A1F44E4E2443780E008AB264 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		A1F44E4F2443780F008AB264 /* Battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Battle.mp3; sourceTree = "<group>"; };
+		A1F44E5424437C04008AB264 /* Win sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Win sound.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +184,7 @@
 		9D26A9D623D7982F00836B7D = {
 			isa = PBXGroup;
 			children = (
+				A1F44E4524436AEA008AB264 /* Music */,
 				9A29FF632405DBB300100222 /* Comic Sans MS.ttf */,
 				9AB75DC123FC874C005A65F7 /* DietView.swift */,
 				0D9D28CF23E8A9E100110705 /* FIRAnalyticsConnector.framework */,
@@ -249,6 +261,19 @@
 				9D26AA0A23D7983000836B7D /* Info.plist */,
 			);
 			path = "Dungeons and DietingUITests";
+			sourceTree = "<group>";
+		};
+		A1F44E4524436AEA008AB264 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				A1F44E5424437C04008AB264 /* Win sound.wav */,
+				A1F44E4F2443780F008AB264 /* Battle.mp3 */,
+				A1F44E4C2443780E008AB264 /* CalmTownTheme.mp3 */,
+				A1F44E4E2443780E008AB264 /* click.wav */,
+				A1F44E4D2443780E008AB264 /* selectNoise.wav */,
+				A1F44E47244377F6008AB264 /* attack_hit.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,11 +381,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1F44E522443780F008AB264 /* click.wav in Resources */,
+				A1F44E532443780F008AB264 /* Battle.mp3 in Resources */,
 				9A29FF642405DBB300100222 /* Comic Sans MS.ttf in Resources */,
+				A1F44E4A244377F6008AB264 /* attack_hit.mp3 in Resources */,
 				9D26A9EE23D7982F00836B7D /* Main.storyboard in Resources */,
 				9D26A9E523D7982F00836B7D /* GameScene.sks in Resources */,
 				9D26A9F023D7983000836B7D /* Assets.xcassets in Resources */,
+				A1F44E512443780F008AB264 /* selectNoise.wav in Resources */,
+				A1F44E502443780F008AB264 /* CalmTownTheme.mp3 in Resources */,
 				9D26A9F323D7983000836B7D /* LaunchScreen.storyboard in Resources */,
+				A1F44E5524437C04008AB264 /* Win sound.wav in Resources */,
 				9D26A9E723D7982F00836B7D /* Actions.sks in Resources */,
 				0D9D28DC23E8AF2200110705 /* GoogleService-Info.plist in Resources */,
 				9A29FF5A2405D80300100222 /* Fonts in Resources */,

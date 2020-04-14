@@ -12,6 +12,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 class ProgressViewController:UIViewController {
+    var floatbuttonHeightWidth = 50.0;
     // These are all the buttons for the menu
     var friendButton: UIButton
     var itemButton: UIButton
@@ -24,6 +25,7 @@ class ProgressViewController:UIViewController {
     var calorieTextField2:UITextField;
     var calorieTextField3:UITextField;
     var saveButton:UIButton;
+    var progressListButton:UIButton;
     //var text
     //var breakfast:UILabel
     //var lunch:UILabel
@@ -41,7 +43,7 @@ class ProgressViewController:UIViewController {
         calorieTextField2 = UITextField()
         calorieTextField3 = UITextField()
         saveButton = UIButton()
-
+        progressListButton =  UIButton()
         super.init(nibName:nil, bundle: nil)
 
     }
@@ -57,6 +59,7 @@ class ProgressViewController:UIViewController {
         calorieTextField2 = UITextField()
         calorieTextField3 = UITextField()
         saveButton = UIButton()
+        progressListButton =  UIButton()
         super.init(coder: aDecoder)
     }
     
@@ -68,6 +71,8 @@ class ProgressViewController:UIViewController {
         progressButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 100, y: view.bounds.maxY - 150, width: 50, height: 50))
         shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         saveButton = UIButton(frame: CGRect(x: (view.bounds.maxX - 50)/2 + 150, y: view.bounds.maxY - 300, width: 50, height: 50))
+        progressListButton = UIButton(frame: CGRect(x: (view.bounds.maxX - 50)/2 - 100, y: view.bounds.maxY - 300, width: 50, height: 50))
+
         calorieTextField0 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
         calorieTextField1 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
         calorieTextField2 = UITextField(frame: CGRect(x:0,y:0,width: 400,height:50));
@@ -141,6 +146,7 @@ class ProgressViewController:UIViewController {
         view.addSubview(calorieTextField2);
         view.addSubview(calorieTextField3);
         view.addSubview(saveButton)
+        view.addSubview(progressListButton)
         
         friendButton.setImage(UIImage(named: "Button"), for: .normal)
         itemButton.setImage(UIImage(named: "Button"), for: .normal)
@@ -148,12 +154,14 @@ class ProgressViewController:UIViewController {
         progressButton.setImage(UIImage(named: "Button"), for: .normal)
         shopButton.setImage(UIImage(named: "Button"), for: .normal)
         saveButton.setImage(UIImage(named:"Button"), for: .normal)
+        progressListButton.setImage(UIImage(named:"Button"), for: .normal)
         
         friendButton.addTarget(self, action: #selector(toFriend), for: .touchUpInside)
         itemButton.addTarget(self, action: #selector(toItem), for: .touchUpInside)
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
         saveButton.addTarget(self, action: #selector(onSaveData), for: .touchUpInside)
+        progressListButton.addTarget(self, action: #selector(toProgressList), for: .touchUpInside)
     }
     
     @IBAction func toFriend() {
@@ -189,6 +197,15 @@ class ProgressViewController:UIViewController {
         UserDefaults.standard.setValueForCalories1(value: calorieTextField1.text)
         UserDefaults.standard.setValueForCalories2(value: calorieTextField2.text)
         UserDefaults.standard.setValueForCalories3(value: calorieTextField3.text)
+        
+  
+        
+    }
+    @IBAction func toProgressList(){
+        let newViewController = ProgressListView()
+        newViewController.view.backgroundColor = .purple
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: false, completion: nil)
         
     }
     @objc func doneClicked(){

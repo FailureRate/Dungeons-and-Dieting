@@ -10,8 +10,11 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 class SettingController: UIViewController {
-   
+    
+    var Musicclick = AVAudioPlayer()
+    
     var friendButton: UIButton
        var itemButton: UIButton
        var mapButton: UIButton
@@ -80,8 +83,17 @@ class SettingController: UIViewController {
            let framelable7 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
                  
            let framelable8 :CGRect = CGRect(x:70,y:40,width: UIScreen.main.bounds.width - 80 , height: 200)
-           
-    
+            
+        do{
+               Musicclick = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "click", ofType: "wav")!))
+      
+               Musicclick.prepareToPlay()
+               
+           }catch
+           {
+               
+               print(error)
+           }
                               
            LastWtext =  UILabel(frame: framelable)
            LastWtext.text = "last Cal"
@@ -147,6 +159,7 @@ class SettingController: UIViewController {
            newViewController.view.backgroundColor = .blue
            newViewController.modalPresentationStyle = .fullScreen
            self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
        }
        
        @IBAction func toMap() {
@@ -154,6 +167,7 @@ class SettingController: UIViewController {
            newViewController.view.backgroundColor = .green
            newViewController.modalPresentationStyle = .fullScreen
            self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
        }
        
        @IBAction func toProgress() {
@@ -161,6 +175,7 @@ class SettingController: UIViewController {
            newViewController.view.backgroundColor = .purple
            newViewController.modalPresentationStyle = .fullScreen
            self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
        }
        
        @IBAction func toShop() {
@@ -168,6 +183,7 @@ class SettingController: UIViewController {
            newViewController.view.backgroundColor = .orange
            newViewController.modalPresentationStyle = .fullScreen
            self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
        }
 
        

@@ -12,10 +12,10 @@ import SpriteKit
 import GameplayKit
 import MapKit
 import CoreLocation
-
+import AVFoundation
 class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapViewDelegate {
    
- 
+ var Musicclick = AVAudioPlayer()
     //buttons
     var friendButton: UIButton
     var itemButton: UIButton
@@ -36,7 +36,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
     
 
     
-    
+ //random direction of monster
     var randomLoc: Double
     var randomLoc2: Double
     var randomLoc3: Double
@@ -105,7 +105,17 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         
         let toolBar = UIToolbar();
         toolBar.sizeToFit();
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+                     
+              toolBar.setItems([doneButton], animated: false)
+        
+        
+        
+        
+        textaddress.inputAccessoryView=toolBar;
+        
         textaddress  = UITextField(frame: CGRect(x:0, y:650, width: 400,height:50))
+        
         textaddress.backgroundColor = .white
         textaddress.placeholder = "Please Input Place you want to go "
         textaddress.borderStyle = .line
@@ -122,7 +132,21 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         shopButton = UIButton(frame: CGRect (x: (view.bounds.maxX - 50) / 2 + 200, y: view.bounds.maxY - 150, width: 50, height: 50))
         
 
-  
+
+        do{
+                 Musicclick = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "click", ofType: "wav")!))
+        
+                 Musicclick.prepareToPlay()
+                 
+             }catch
+             {
+                 
+                 print(error)
+             }
+               
+        
+        
+        
         view.addSubview(textaddress)
         view.addSubview(getDirectionButton)
         
@@ -169,6 +193,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         newViewController.view.backgroundColor = .blue
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toItem() {
@@ -176,6 +201,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         newViewController.view.backgroundColor = .red
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toProgress() {
@@ -183,6 +209,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         newViewController.view.backgroundColor = .purple
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toShop() {
@@ -190,7 +217,14 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         newViewController.view.backgroundColor = .orange
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
+    
+    
+    @objc func doneClicked(){
+           view.endEditing(true);
+           Musicclick.play()
+       }
     
     
     //check to see location system are working

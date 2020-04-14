@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 
 class InventoryViewController:UIViewController
 {
+       var Musicclick = AVAudioPlayer()
     //buttons
     var friendButton: UIButton
     var itemButton: UIButton
@@ -402,6 +403,13 @@ class InventoryViewController:UIViewController
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         shopButton.addTarget(self, action: #selector(toShop), for: .touchUpInside)
+    do{
+       Musicclick = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "click", ofType: "wav")!))
+        Musicclick.prepareToPlay()
+        }catch
+       {
+            print(error)
+       }
     }
     
     @IBAction func toFriend() {
@@ -409,6 +417,7 @@ class InventoryViewController:UIViewController
         newViewController.view.backgroundColor = .blue
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toItem() {
@@ -416,6 +425,7 @@ class InventoryViewController:UIViewController
         newViewController.view.backgroundColor = .red
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
+        Musicclick.play()
     }
     
     @IBAction func toMap() {
@@ -423,21 +433,21 @@ class InventoryViewController:UIViewController
         newViewController.view.backgroundColor = .green
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
-    }
+        Musicclick.play()    }
     
     @IBAction func toProgress() {
         let newViewController = ProgressViewController()
         newViewController.view.backgroundColor = .purple
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
-    }
+        Musicclick.play()    }
     
     @IBAction func toShop() {
         let newViewController = ShopViewController()
         newViewController.view.backgroundColor = .orange
         newViewController.modalPresentationStyle = .fullScreen
         self.present(newViewController, animated: false, completion: nil)
-    }
+        Musicclick.play()    }
 
     
   

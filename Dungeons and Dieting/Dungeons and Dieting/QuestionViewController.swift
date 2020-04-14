@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 
 class QuestionViewController : UIViewController  {
     var name: UITextField
     var age: UITextField
     var calorieCount: UITextField
     var proceedButton: UIButton
+    var Musicclick = AVAudioPlayer()
     
     init(){
         name = UITextField()
@@ -57,6 +58,7 @@ class QuestionViewController : UIViewController  {
         age.font = UIFontMetrics.default.scaledFont(for: customFont)
         calorieCount.font = UIFontMetrics.default.scaledFont(for: customFont)
         
+        
         name.placeholder = "Please Input Name"
         name.borderStyle = .line
         
@@ -81,6 +83,15 @@ class QuestionViewController : UIViewController  {
         age.inputAccessoryView = toolBar;
         calorieCount.inputAccessoryView = toolBar;
         
+        do{
+               Musicclick = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "click", ofType: "wav")!))
+                   Musicclick.prepareToPlay()
+                   
+          }catch
+           {
+               
+               print(error)
+           }
         
         view.addSubview(name);
         view.addSubview(age);
@@ -95,6 +106,7 @@ class QuestionViewController : UIViewController  {
     
     @objc func doneClicked(){
         view.endEditing(true);
+        Musicclick.play()
     }
     
     @objc func moveNextScreen(){

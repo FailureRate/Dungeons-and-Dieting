@@ -19,6 +19,9 @@ class ShopViewController:UIViewController{
     var progressButton: UIButton
     var shopButton: UIButton
     
+    // Player Money
+    var money: UILabel
+    
     // Shop Items
     var shopItem1: ShopItem
     var shopItem2: ShopItem
@@ -35,6 +38,8 @@ class ShopViewController:UIViewController{
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        
+        money = UILabel()
         
         shopItem1 = ShopItem()
         shopItem2 = ShopItem()
@@ -53,6 +58,8 @@ class ShopViewController:UIViewController{
         mapButton = UIButton()
         progressButton = UIButton()
         shopButton = UIButton()
+        
+        money = UILabel()
         
         shopItem1 = ShopItem()
         shopItem2 = ShopItem()
@@ -90,14 +97,18 @@ class ShopViewController:UIViewController{
         mapButton.addTarget(self, action: #selector(toMap), for: .touchUpInside)
         progressButton.addTarget(self, action: #selector(toProgress), for: .touchUpInside)
         
-        shopItem1.Info(name: "Baseaxe", price: 100, position: 1, view: view)
-        shopItem2.Info(name: "Baseaxe", price: 100, position: 2, view: view)
-        shopItem3.Info(name: "Baseaxe", price: 100, position: 3, view: view)
-        shopItem4.Info(name: "Baseaxe", price: 100, position: 4, view: view)
-        shopItem5.Info(name: "Baseaxe", price: 100, position: 5, view: view)
-        shopItem6.Info(name: "Baseaxe", price: 100, position: 6, view: view)
-        shopItem7.Info(name: "Baseaxe", price: 100, position: 7, view: view)
-        shopItem8.Info(name: "Baseaxe", price: 100, position: 8, view: view)
+        money = UILabel(frame: CGRect (x: view.bounds.midX - 200, y: view.bounds.midY - 300, width: 100, height: 100))
+        money.text = "0G" // upadte when player class is made
+        view.addSubview(money)
+            
+        shopItem1.SetUpShopItem(name: "Baseaxe", price: 100, position: 1, view: view)
+        shopItem2.SetUpShopItem(name: "Baseaxe", price: 100, position: 2, view: view)
+        shopItem3.SetUpShopItem(name: "Baseaxe", price: 100, position: 3, view: view)
+        shopItem4.SetUpShopItem(name: "Baseaxe", price: 100, position: 4, view: view)
+        shopItem5.SetUpShopItem(name: "Baseaxe", price: 100, position: 5, view: view)
+        shopItem6.SetUpShopItem(name: "Baseaxe", price: 100, position: 6, view: view)
+        shopItem7.SetUpShopItem(name: "Baseaxe", price: 100, position: 7, view: view)
+        shopItem8.SetUpShopItem(name: "Baseaxe", price: 100, position: 8, view: view)
         
         view.addSubview(shopItem1.Button)
         view.addSubview(shopItem1.Label)
